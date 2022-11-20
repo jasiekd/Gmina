@@ -8,5 +8,8 @@ namespace Gmina_Api.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
         public DbSet<UserEntity> Users { get; set; }
+
+
+
     }
 }
