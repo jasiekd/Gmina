@@ -38,7 +38,7 @@
             this.ElectionsButton = new Gmina.ButtonRounded();
             this.panel2 = new System.Windows.Forms.Panel();
             this.appName = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.gminaIcon = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.profile2 = new Gmina.ButtonRounded();
@@ -52,10 +52,14 @@
             this.aboutCity1 = new Gmina.Body.AboutCity();
             this.menuBody = new Gmina.MenuBody();
             this.taxesBody = new Gmina.TaxesBody();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.footerInfo2 = new System.Windows.Forms.Label();
+            this.footerInfo1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gminaIcon)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -179,7 +183,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
             this.panel2.Controls.Add(this.appName);
-            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.gminaIcon);
             this.panel2.Location = new System.Drawing.Point(70, 12);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
@@ -189,6 +193,7 @@
             // appName
             // 
             this.appName.AutoSize = true;
+            this.appName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.appName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.appName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.appName.Location = new System.Drawing.Point(105, 6);
@@ -197,18 +202,20 @@
             this.appName.Size = new System.Drawing.Size(117, 78);
             this.appName.TabIndex = 1;
             this.appName.Text = "Urząd \r\nGminy";
-            this.appName.Click += new System.EventHandler(this.label1_Click);
+            this.appName.Click += new System.EventHandler(this.appName_Click);
             // 
-            // pictureBox1
+            // gminaIcon
             // 
-            this.pictureBox1.Image = global::Gmina.Properties.Resources.office;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 17);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 66);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.gminaIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gminaIcon.Image = global::Gmina.Properties.Resources.office;
+            this.gminaIcon.Location = new System.Drawing.Point(18, 17);
+            this.gminaIcon.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.gminaIcon.Name = "gminaIcon";
+            this.gminaIcon.Size = new System.Drawing.Size(70, 66);
+            this.gminaIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gminaIcon.TabIndex = 0;
+            this.gminaIcon.TabStop = false;
+            this.gminaIcon.Click += new System.EventHandler(this.gminaIcon_Click);
             // 
             // imageList1
             // 
@@ -365,12 +372,49 @@
             this.taxesBody.TabIndex = 0;
             this.taxesBody.Load += new System.EventHandler(this.taxesBody_Load);
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
+            this.panel4.Controls.Add(this.footerInfo2);
+            this.panel4.Controls.Add(this.footerInfo1);
+            this.panel4.Location = new System.Drawing.Point(70, 815);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1091, 37);
+            this.panel4.TabIndex = 16;
+            // 
+            // footerInfo2
+            // 
+            this.footerInfo2.AutoSize = true;
+            this.footerInfo2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.footerInfo2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.footerInfo2.Location = new System.Drawing.Point(902, 13);
+            this.footerInfo2.Name = "footerInfo2";
+            this.footerInfo2.Size = new System.Drawing.Size(171, 17);
+            this.footerInfo2.TabIndex = 1;
+            this.footerInfo2.Text = "Projekt i wykonanie: GGGJ";
+            // 
+            // footerInfo1
+            // 
+            this.footerInfo1.AutoSize = true;
+            this.footerInfo1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.footerInfo1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.footerInfo1.Location = new System.Drawing.Point(18, 13);
+            this.footerInfo1.Name = "footerInfo1";
+            this.footerInfo1.Size = new System.Drawing.Size(368, 17);
+            this.footerInfo1.TabIndex = 0;
+            this.footerInfo1.Text = "Urząd Gminy w Tadeuszowie Plac Tadeusza 123-321 Cosnie";
+            // 
             // HomePage
             // 
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(90)))));
-            this.ClientSize = new System.Drawing.Size(1211, 943);
+            this.ClientSize = new System.Drawing.Size(1225, 869);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.supportContactBody1);
             this.Controls.Add(this.eventsBody1);
@@ -388,8 +432,10 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gminaIcon)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -406,7 +452,7 @@
         private Body.SupportContactBody supportContactBody1;
         private Body.AboutCity aboutCity1;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox gminaIcon;
         private System.Windows.Forms.Label appName;
         private System.Windows.Forms.Panel panel3;
         private ButtonRounded MenuButton;
@@ -419,5 +465,8 @@
         private ButtonRounded aboutCity2;
         private ButtonRounded profile2;
         private ButtonRounded settings2;
+        private Panel panel4;
+        private Label footerInfo2;
+        private Label footerInfo1;
     }
 }

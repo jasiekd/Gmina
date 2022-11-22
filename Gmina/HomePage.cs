@@ -58,9 +58,10 @@ namespace Gmina
 
 
 
-        private void label1_Click(object sender, EventArgs e)
+        private void appName_Click(object sender, EventArgs e)
         {
-
+            menuBody.Show();
+            menuBody.BringToFront();
         }
 
 
@@ -121,6 +122,12 @@ namespace Gmina
         private void settingsButtonAction(object sender, EventArgs e)
         {
 
+        }
+
+        private void gminaIcon_Click(object sender, EventArgs e)
+        {
+            menuBody.Show();
+            menuBody.BringToFront();
         }
     }
 }

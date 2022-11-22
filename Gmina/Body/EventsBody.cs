@@ -29,6 +29,7 @@ namespace Gmina.Body
             ListItem[] listItems = new ListItem[n];
             for (int i = 0; i < listItems.Length; i++)
             {
+            
                 listItems[i] = new ListItem();
                 listItems[i].Picture = Resources.image;
                 listItems[i].Title = "takkkkkkkkkkk"+i;
