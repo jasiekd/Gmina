@@ -16,7 +16,7 @@ namespace GminaApi.Entity
         public DateTime BirthDate { get; set; }
         public string Address { get; set; }
         public int RoleId { get; set; }
-        public RoleEntity Role { get; set; }
+        //public RoleEntity Role { get; set; }
 
     }
 }
