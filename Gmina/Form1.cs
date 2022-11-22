@@ -7,11 +7,13 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Numerics;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using GminaApi.Entity;
+using Newtonsoft.Json;
 
 namespace Gmina
 {
@@ -37,21 +39,23 @@ namespace Gmina
             string Login = LoginBox.Text;
             string Password = PasswordBox.Text;
             string str = @"http://localhost:5066/api/User/" + Login + "/" + Password;
-            //HttpWebRequest request = (HttpWebRequest)WebRequest.Create(str);
-            //request.Method = "POST";
-            //HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            //UserEntity responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(str);
+            request.Method = "POST";
+            request.Accept = "application/json";
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             
-            //Debug.WriteLine(responseString);
+            string json = new StreamReader(response.GetResponseStream()).ReadToEnd();
 
-            this.Hide();
-            HomePage homePage = new HomePage();
-            //this.Show(homePage);
-            homePage.Show();   
-            // HomePage.Hide();
-            //homePage1.Show();
-        }
+            UserEntity user = JsonConvert.DeserializeObject<UserEntity>(json);
 
-      
+            //if(user.Login==Login) {
+                this.Hide();
+                HomePage homePage = new HomePage();
+                //this.Show(homePage);
+                homePage.Show();
+                // HomePage.Hide();
+                //homePage1.Show();
+            //}
+        }     
     }
 }
