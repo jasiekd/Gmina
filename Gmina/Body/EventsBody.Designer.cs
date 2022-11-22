@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // label1
@@ -42,14 +43,25 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Wydarzenia";
             // 
+            // flowLayoutPanel
+            // 
+            this.flowLayoutPanel.AutoScroll = true;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 153);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(900, 544);
+            this.flowLayoutPanel.TabIndex = 5;
+            this.flowLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel_Paint);
+            // 
             // EventsBody
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.label1);
             this.Name = "EventsBody";
             this.Size = new System.Drawing.Size(900, 700);
+            this.Load += new System.EventHandler(this.EventsBody_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -58,5 +70,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
     }
 }
