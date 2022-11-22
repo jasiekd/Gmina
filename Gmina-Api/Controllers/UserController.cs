@@ -105,15 +105,16 @@ namespace Gmina_Api.Controllers
             return _context.Users.Any(e => e.ID == id);
         }
 
-        [HttpPost("{Login}/{Password}")]
+
+        [HttpGet("{Login}/{Password}")]
         public async Task<ActionResult<UserEntity>> LogIn(string Login, string Password)
         {
-            //var userEntity = await _context.Users.Where(y=>y.Login==Login);
-            //if (userEntity != null)
-            //{
-            //    return userEntity;
-            //}
-            //return NotFound();
+            var userEntity = _context.Users.Where(y=>y.Login==Login).Where(x=>x.Password==Password);
+            if (userEntity != null)
+            {
+                return Ok(userEntity);
+            }
+            return NotFound();
         }
     }
 }
