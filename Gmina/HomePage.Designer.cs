@@ -1,4 +1,6 @@
-﻿namespace Gmina
+﻿using Gmina.Body;
+
+namespace Gmina
 {
     partial class HomePage
     {
@@ -6,7 +8,20 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private void initSingleEvent()
+        {
+            // 
+            // singleEvent1
+            // 
+            this.singleEvent1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.singleEvent1.ForeColor = System.Drawing.Color.Black;
+            this.singleEvent1.Location = new System.Drawing.Point(426, 180);
+            this.singleEvent1.Name = "singleEvent1";
+            this.singleEvent1.Size = new System.Drawing.Size(901, 876);
+            this.singleEvent1.TabIndex = 16;
+            this.singleEvent1.Load += new System.EventHandler(this.singleEvent1_Load);
 
+        }
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -46,12 +61,13 @@
             this.aboutCity2 = new Gmina.ButtonRounded();
             this.reservation2 = new Gmina.ButtonRounded();
             this.supportContactBody1 = new Gmina.Body.SupportContactBody();
-            this.eventsBody1 = new Gmina.Body.EventsBody();
+            this.eventsBody1 = new Gmina.Body.EventsBody(this);
             this.applicationsBody1 = new Gmina.Body.ApplicationsBody();
             this.electionsBody1 = new Gmina.Body.ElectionsBody();
             this.aboutCity1 = new Gmina.Body.AboutCity();
             this.menuBody = new Gmina.MenuBody();
             this.taxesBody = new Gmina.TaxesBody();
+            this.singleEvent1 = new Gmina.Body.SingleEvent(this.eventsBody1);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,10 +83,10 @@
             this.panel1.Controls.Add(this.TaxesButton);
             this.panel1.Controls.Add(this.ApplicationsButton);
             this.panel1.Controls.Add(this.ElectionsButton);
-            this.panel1.Location = new System.Drawing.Point(70, 135);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(80, 180);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(254, 657);
+            this.panel1.Size = new System.Drawing.Size(290, 876);
             this.panel1.TabIndex = 8;
             // 
             // SupportContactButton
@@ -81,10 +97,10 @@
             this.SupportContactButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SupportContactButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SupportContactButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.SupportContactButton.Location = new System.Drawing.Point(18, 545);
-            this.SupportContactButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.SupportContactButton.Location = new System.Drawing.Point(21, 727);
+            this.SupportContactButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.SupportContactButton.Name = "SupportContactButton";
-            this.SupportContactButton.Size = new System.Drawing.Size(219, 75);
+            this.SupportContactButton.Size = new System.Drawing.Size(250, 100);
             this.SupportContactButton.TabIndex = 20;
             this.SupportContactButton.Text = "Kontakt z supportem";
             this.SupportContactButton.UseVisualStyleBackColor = false;
@@ -98,10 +114,10 @@
             this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MenuButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.MenuButton.Location = new System.Drawing.Point(18, 28);
-            this.MenuButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MenuButton.Location = new System.Drawing.Point(21, 37);
+            this.MenuButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.MenuButton.Name = "MenuButton";
-            this.MenuButton.Size = new System.Drawing.Size(219, 75);
+            this.MenuButton.Size = new System.Drawing.Size(250, 100);
             this.MenuButton.TabIndex = 15;
             this.MenuButton.Text = "Menu Główne";
             this.MenuButton.UseVisualStyleBackColor = false;
@@ -115,10 +131,10 @@
             this.EvenetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EvenetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EvenetButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.EvenetButton.Location = new System.Drawing.Point(18, 442);
-            this.EvenetButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.EvenetButton.Location = new System.Drawing.Point(21, 589);
+            this.EvenetButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.EvenetButton.Name = "EvenetButton";
-            this.EvenetButton.Size = new System.Drawing.Size(219, 75);
+            this.EvenetButton.Size = new System.Drawing.Size(250, 100);
             this.EvenetButton.TabIndex = 19;
             this.EvenetButton.Text = "Wydarzenia";
             this.EvenetButton.UseVisualStyleBackColor = false;
@@ -132,10 +148,10 @@
             this.TaxesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TaxesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TaxesButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.TaxesButton.Location = new System.Drawing.Point(18, 127);
-            this.TaxesButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TaxesButton.Location = new System.Drawing.Point(21, 169);
+            this.TaxesButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.TaxesButton.Name = "TaxesButton";
-            this.TaxesButton.Size = new System.Drawing.Size(219, 75);
+            this.TaxesButton.Size = new System.Drawing.Size(250, 100);
             this.TaxesButton.TabIndex = 16;
             this.TaxesButton.Text = "Podatki";
             this.TaxesButton.UseVisualStyleBackColor = false;
@@ -149,10 +165,10 @@
             this.ApplicationsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ApplicationsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ApplicationsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.ApplicationsButton.Location = new System.Drawing.Point(18, 333);
-            this.ApplicationsButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ApplicationsButton.Location = new System.Drawing.Point(21, 444);
+            this.ApplicationsButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ApplicationsButton.Name = "ApplicationsButton";
-            this.ApplicationsButton.Size = new System.Drawing.Size(219, 75);
+            this.ApplicationsButton.Size = new System.Drawing.Size(250, 100);
             this.ApplicationsButton.TabIndex = 18;
             this.ApplicationsButton.Text = "Wnioski";
             this.ApplicationsButton.UseVisualStyleBackColor = false;
@@ -166,10 +182,10 @@
             this.ElectionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ElectionsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ElectionsButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.ElectionsButton.Location = new System.Drawing.Point(18, 233);
-            this.ElectionsButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ElectionsButton.Location = new System.Drawing.Point(21, 311);
+            this.ElectionsButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ElectionsButton.Name = "ElectionsButton";
-            this.ElectionsButton.Size = new System.Drawing.Size(219, 75);
+            this.ElectionsButton.Size = new System.Drawing.Size(250, 100);
             this.ElectionsButton.TabIndex = 17;
             this.ElectionsButton.Text = "Wybory";
             this.ElectionsButton.UseVisualStyleBackColor = false;
@@ -180,10 +196,10 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
             this.panel2.Controls.Add(this.appName);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(70, 12);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(80, 16);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(254, 103);
+            this.panel2.Size = new System.Drawing.Size(290, 137);
             this.panel2.TabIndex = 9;
             // 
             // appName
@@ -191,10 +207,10 @@
             this.appName.AutoSize = true;
             this.appName.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.appName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.appName.Location = new System.Drawing.Point(105, 6);
-            this.appName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.appName.Location = new System.Drawing.Point(120, 8);
+            this.appName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.appName.Name = "appName";
-            this.appName.Size = new System.Drawing.Size(117, 78);
+            this.appName.Size = new System.Drawing.Size(142, 96);
             this.appName.TabIndex = 1;
             this.appName.Text = "Urząd \r\nGminy";
             this.appName.Click += new System.EventHandler(this.label1_Click);
@@ -202,10 +218,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Gmina.Properties.Resources.office;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 17);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(21, 23);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 66);
+            this.pictureBox1.Size = new System.Drawing.Size(80, 88);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -223,10 +239,10 @@
             this.panel3.Controls.Add(this.settings2);
             this.panel3.Controls.Add(this.aboutCity2);
             this.panel3.Controls.Add(this.reservation2);
-            this.panel3.Location = new System.Drawing.Point(373, 12);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panel3.Location = new System.Drawing.Point(426, 16);
+            this.panel3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(788, 65);
+            this.panel3.Size = new System.Drawing.Size(901, 87);
             this.panel3.TabIndex = 14;
             // 
             // profile2
@@ -237,10 +253,10 @@
             this.profile2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.profile2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.profile2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.profile2.Location = new System.Drawing.Point(588, 17);
-            this.profile2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.profile2.Location = new System.Drawing.Point(672, 23);
+            this.profile2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.profile2.Name = "profile2";
-            this.profile2.Size = new System.Drawing.Size(88, 27);
+            this.profile2.Size = new System.Drawing.Size(101, 36);
             this.profile2.TabIndex = 23;
             this.profile2.Text = "Profil";
             this.profile2.UseVisualStyleBackColor = false;
@@ -254,10 +270,10 @@
             this.settings2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.settings2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.settings2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.settings2.Location = new System.Drawing.Point(682, 17);
-            this.settings2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.settings2.Location = new System.Drawing.Point(779, 23);
+            this.settings2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.settings2.Name = "settings2";
-            this.settings2.Size = new System.Drawing.Size(88, 27);
+            this.settings2.Size = new System.Drawing.Size(101, 36);
             this.settings2.TabIndex = 24;
             this.settings2.Text = "Ustawienia";
             this.settings2.UseVisualStyleBackColor = false;
@@ -271,10 +287,10 @@
             this.aboutCity2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.aboutCity2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.aboutCity2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.aboutCity2.Location = new System.Drawing.Point(270, 17);
-            this.aboutCity2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.aboutCity2.Location = new System.Drawing.Point(309, 23);
+            this.aboutCity2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.aboutCity2.Name = "aboutCity2";
-            this.aboutCity2.Size = new System.Drawing.Size(88, 27);
+            this.aboutCity2.Size = new System.Drawing.Size(101, 36);
             this.aboutCity2.TabIndex = 22;
             this.aboutCity2.Text = "O mieście";
             this.aboutCity2.UseVisualStyleBackColor = false;
@@ -288,10 +304,10 @@
             this.reservation2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reservation2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.reservation2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.reservation2.Location = new System.Drawing.Point(26, 17);
-            this.reservation2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.reservation2.Location = new System.Drawing.Point(30, 23);
+            this.reservation2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.reservation2.Name = "reservation2";
-            this.reservation2.Size = new System.Drawing.Size(220, 27);
+            this.reservation2.Size = new System.Drawing.Size(251, 36);
             this.reservation2.TabIndex = 21;
             this.reservation2.Text = "Rezerwacja wizyty w urzędzie";
             this.reservation2.UseVisualStyleBackColor = false;
@@ -300,77 +316,88 @@
             // supportContactBody1
             // 
             this.supportContactBody1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.supportContactBody1.Location = new System.Drawing.Point(373, 135);
-            this.supportContactBody1.Margin = new System.Windows.Forms.Padding(2);
+            this.supportContactBody1.Location = new System.Drawing.Point(426, 180);
+            this.supportContactBody1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.supportContactBody1.Name = "supportContactBody1";
-            this.supportContactBody1.Size = new System.Drawing.Size(788, 657);
+            this.supportContactBody1.Size = new System.Drawing.Size(901, 876);
             this.supportContactBody1.TabIndex = 13;
             this.supportContactBody1.Load += new System.EventHandler(this.supportContactBody1_Load);
             // 
             // eventsBody1
             // 
             this.eventsBody1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.eventsBody1.Location = new System.Drawing.Point(373, 135);
-            this.eventsBody1.Margin = new System.Windows.Forms.Padding(2);
+            this.eventsBody1.Location = new System.Drawing.Point(426, 180);
+            this.eventsBody1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.eventsBody1.Name = "eventsBody1";
-            this.eventsBody1.Size = new System.Drawing.Size(788, 657);
+            this.eventsBody1.Size = new System.Drawing.Size(901, 876);
             this.eventsBody1.TabIndex = 12;
             this.eventsBody1.Load += new System.EventHandler(this.eventsBody1_Load);
             // 
             // applicationsBody1
             // 
             this.applicationsBody1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.applicationsBody1.Location = new System.Drawing.Point(373, 135);
-            this.applicationsBody1.Margin = new System.Windows.Forms.Padding(2);
+            this.applicationsBody1.Location = new System.Drawing.Point(426, 180);
+            this.applicationsBody1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.applicationsBody1.Name = "applicationsBody1";
-            this.applicationsBody1.Size = new System.Drawing.Size(788, 657);
+            this.applicationsBody1.Size = new System.Drawing.Size(901, 876);
             this.applicationsBody1.TabIndex = 11;
             this.applicationsBody1.Load += new System.EventHandler(this.applicationsBody1_Load);
             // 
             // electionsBody1
             // 
             this.electionsBody1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.electionsBody1.Location = new System.Drawing.Point(373, 135);
-            this.electionsBody1.Margin = new System.Windows.Forms.Padding(2);
+            this.electionsBody1.Location = new System.Drawing.Point(426, 180);
+            this.electionsBody1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.electionsBody1.Name = "electionsBody1";
-            this.electionsBody1.Size = new System.Drawing.Size(788, 657);
+            this.electionsBody1.Size = new System.Drawing.Size(901, 876);
             this.electionsBody1.TabIndex = 10;
             this.electionsBody1.Load += new System.EventHandler(this.electionsBody_Load);
             // 
             // aboutCity1
             // 
             this.aboutCity1.Location = new System.Drawing.Point(0, 0);
-            this.aboutCity1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.aboutCity1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.aboutCity1.Name = "aboutCity1";
-            this.aboutCity1.Size = new System.Drawing.Size(175, 173);
+            this.aboutCity1.Size = new System.Drawing.Size(200, 231);
             this.aboutCity1.TabIndex = 15;
             // 
             // menuBody
             // 
             this.menuBody.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.menuBody.Location = new System.Drawing.Point(373, 135);
-            this.menuBody.Margin = new System.Windows.Forms.Padding(2);
+            this.menuBody.Location = new System.Drawing.Point(426, 180);
+            this.menuBody.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.menuBody.Name = "menuBody";
-            this.menuBody.Size = new System.Drawing.Size(788, 657);
+            this.menuBody.Size = new System.Drawing.Size(901, 876);
             this.menuBody.TabIndex = 7;
             this.menuBody.Load += new System.EventHandler(this.menuBody_Load);
             // 
             // taxesBody
             // 
             this.taxesBody.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.taxesBody.Location = new System.Drawing.Point(373, 135);
-            this.taxesBody.Margin = new System.Windows.Forms.Padding(2);
+            this.taxesBody.Location = new System.Drawing.Point(426, 180);
+            this.taxesBody.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.taxesBody.Name = "taxesBody";
-            this.taxesBody.Size = new System.Drawing.Size(788, 657);
+            this.taxesBody.Size = new System.Drawing.Size(901, 876);
             this.taxesBody.TabIndex = 0;
             this.taxesBody.Load += new System.EventHandler(this.taxesBody_Load);
+
+
+
+
+            initSingleEvent();
+           
+           
+           
+           
+           
             // 
             // HomePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(90)))));
-            this.ClientSize = new System.Drawing.Size(1211, 943);
+            this.ClientSize = new System.Drawing.Size(1384, 1257);
+            this.Controls.Add(this.singleEvent1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.supportContactBody1);
             this.Controls.Add(this.eventsBody1);
@@ -381,7 +408,7 @@
             this.Controls.Add(this.menuBody);
             this.Controls.Add(this.taxesBody);
             this.Controls.Add(this.aboutCity1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "HomePage";
             this.Text = "HomePage";
             this.Load += new System.EventHandler(this.HomePage_Load);
@@ -419,5 +446,6 @@
         private ButtonRounded aboutCity2;
         private ButtonRounded profile2;
         private ButtonRounded settings2;
+        private Body.SingleEvent singleEvent1;
     }
 }

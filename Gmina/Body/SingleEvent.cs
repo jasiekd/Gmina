@@ -7,18 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Gmina.Body;
 namespace Gmina.Body
 {
-    public partial class ListItem : UserControl
+    public partial class SingleEvent : UserControl
     {
-        HomePage homePage;
         EventsBody eventsBody;
-        public ListItem(HomePage homePage, EventsBody eventsBody)
+
+        public SingleEvent(EventsBody eventsBody)
         {
             InitializeComponent();
-            this.homePage = homePage;
             this.eventsBody = eventsBody;
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
         private string _title;
         private string _description;
@@ -28,44 +32,23 @@ namespace Gmina.Body
             get { return _title; }
             set { _title = value; lblTitle.Text = value; }
         }
-       
+
         public string Description
         {
             get { return _description; }
             set { _description = value; lblDescription.Text = value; }
         }
-        
+
         public Image Picture
         {
             get { return _picture; }
             set { _picture = value; EventPicture.Image = value; }
         }
 
-        private void ListItem_MouseHover(object sender, EventArgs e)
+        private void SingleEvent_Load(object sender, EventArgs e)
         {
-           
-        }
+            lblDescription.Text = eventsBody.wtf();
 
-        private void ListItem_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ListItem_MouseLeave(object sender, EventArgs e)
-        {
-            this.BackColor = Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(52)))), ((int)(((byte)(86)))));
-            
-        }
-
-        private void ListItem_MouseEnter(object sender, EventArgs e)
-        {
-            this.BackColor = Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(52)))), ((int)(((byte)(50)))));
-        }
-
-        private void ListItem_MouseClick(object sender, MouseEventArgs e)
-        {
-            eventsBody.CurrentListItem = this;
-            homePage.ShowSingleEvent();
 
         }
     }

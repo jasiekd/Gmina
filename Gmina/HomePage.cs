@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gmina.Body;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,13 @@ namespace Gmina
             InitializeComponent();
         }
 
-
+        public void ShowSingleEvent()
+        {
+            singleEvent1 = new SingleEvent(eventsBody1);
+            initSingleEvent();
+            singleEvent1.Show();
+            singleEvent1.BringToFront();
+        }
 
         private void taxesBody_Load(object sender, EventArgs e)
         {
@@ -33,7 +40,7 @@ namespace Gmina
 
         private void HomePage_Load(object sender, EventArgs e)
         {
-
+            singleEvent1.Hide();
         }
 
         private void electionsBody_Load(object sender, EventArgs e)
@@ -119,6 +126,11 @@ namespace Gmina
         }
 
         private void settingsButtonAction(object sender, EventArgs e)
+        {
+
+        }
+
+        private void singleEvent1_Load(object sender, EventArgs e)
         {
 
         }
