@@ -1,6 +1,6 @@
-﻿namespace Gmina
+﻿namespace Gmina.Body
 {
-    partial class TaxesBody
+    partial class SupportContactBody
     {
         /// <summary> 
         /// Required designer variable.
@@ -36,19 +36,19 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(373, 30);
+            this.label1.Location = new System.Drawing.Point(257, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 46);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Podatki";
+            this.label1.Size = new System.Drawing.Size(385, 46);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Kontakt z supportem";
             // 
-            // TaxesBody
+            // SupportContactBody
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.Controls.Add(this.label1);
-            this.Name = "TaxesBody";
+            this.Name = "SupportContactBody";
             this.Size = new System.Drawing.Size(900, 700);
             this.ResumeLayout(false);
             this.PerformLayout();
