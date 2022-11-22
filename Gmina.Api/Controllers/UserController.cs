@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Gmina_Api.Data;
-using Gmina_Api.Entity;
+using GminaApi.Data;
+using GminaApi.Entity;
 
-namespace Gmina_Api.Controllers
+namespace GminaApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -106,7 +106,7 @@ namespace Gmina_Api.Controllers
         }
 
 
-        [HttpGet("{Login}/{Password}")]
+        [HttpPost("{Login}/{Password}")]
         public async Task<ActionResult<UserEntity>> LogIn(string Login, string Password)
         {
             var userEntity = _context.Users.Where(y=>y.Login==Login).Where(x=>x.Password==Password);

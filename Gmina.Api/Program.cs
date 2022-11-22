@@ -1,4 +1,4 @@
-global using Gmina_Api.Data;
+global using GminaApi.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

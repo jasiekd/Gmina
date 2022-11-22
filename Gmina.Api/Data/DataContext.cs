@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Gmina_Api.Entity;
+using GminaApi.Entity;
 
-namespace Gmina_Api.Data
+namespace GminaApi.Data
 {
     public class DataContext : DbContext
     {

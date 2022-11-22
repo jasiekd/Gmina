@@ -1,4 +1,4 @@
-﻿namespace Gmina_Api.Entity
+﻿namespace GminaApi.Entity
 {
     public class RoleEntity : IEntity
     {

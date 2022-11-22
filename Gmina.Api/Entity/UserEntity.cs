@@ -2,7 +2,7 @@
 using System.Net;
 using System.Security.Policy;
 
-namespace Gmina_Api.Entity
+namespace GminaApi.Entity
 {
     public class UserEntity : IEntity
     {

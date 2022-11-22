@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "Gmina_Api": {
+    "GminaApi": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

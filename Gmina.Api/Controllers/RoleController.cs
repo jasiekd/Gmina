@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Gmina_Api.Data;
-using Gmina_Api.Entity;
+using GminaApi.Data;
+using GminaApi.Entity;
 
-namespace Gmina_Api.Controllers
+namespace GminaApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
