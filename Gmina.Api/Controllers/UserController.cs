@@ -109,7 +109,7 @@ namespace GminaApi.Controllers
         [HttpPost("{Login}/{Password}")]
         public async Task<ActionResult<UserEntity>> LogIn(string Login, string Password)
         {
-            var userEntity = _context.Users.Where(y=>y.Login==Login).Where(x=>x.Password==Password);
+            var userEntity = _context.Users.Where(y=>y.Login==Login).Where(x=>x.Password==Password).FirstOrDefault();
             if (userEntity != null)
             {
                 return Ok(userEntity);
