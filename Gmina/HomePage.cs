@@ -20,18 +20,18 @@ namespace Gmina
 
         public void ShowSingleEvent()
         {
-            singleEvent1 = new SingleEvent(eventsBody1);
+            singleEvent2 = new SingleEvent();
             initSingleEvent();
-            singleEvent1.Show();
-            singleEvent1.BringToFront();
+            singleEvent2.Show();
+            singleEvent2.BringToFront();
         }
 
         private void taxesBody_Load(object sender, EventArgs e)
         {
             taxesBody.Hide();
         }
-
        
+
 
         private void menuBody_Load(object sender, EventArgs e)
         {
@@ -40,7 +40,7 @@ namespace Gmina
 
         private void HomePage_Load(object sender, EventArgs e)
         {
-            singleEvent1.Hide();
+            singleEvent2.Hide();
         }
 
         private void electionsBody_Load(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace Gmina
         }
         private void eventsBody1_Load(object sender, EventArgs e)
         {
-            eventsBody1.Hide();
+            //eventsBody1.Hide();
         }
 
 
@@ -131,6 +131,16 @@ namespace Gmina
         }
 
         private void singleEvent1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eventsBody1_Load_1(object sender, EventArgs e)
+        {
+            eventsBody1.Hide();
+        }
+
+        private void singleEvent2_Load(object sender, EventArgs e)
         {
 
         }

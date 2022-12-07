@@ -40,7 +40,9 @@ namespace Gmina
         private void LoginButton_Click(object sender, EventArgs e)
         {
             string Login = LoginBox.Text;
+            Login = "admin.tadek1";
             string Password = PasswordBox.Text;
+            Password = "12345";
             string str = @"http://localhost:5066/api/User/" + Login + "/" + Password;
             try { 
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(str);

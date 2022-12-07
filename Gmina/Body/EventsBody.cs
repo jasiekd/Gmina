@@ -13,15 +13,16 @@ namespace Gmina.Body
 {
     public partial class EventsBody : UserControl
     {
-        HomePage homePage;
+        //HomePage homePage;
         public ListItem CurrentListItem;
-        public EventsBody(HomePage homePage)
+      
+        public EventsBody()
         {
-            CurrentListItem = new ListItem(homePage,this);
+            CurrentListItem = new ListItem();
             CurrentListItem.Picture = Resources.image;
             CurrentListItem.Title = "lol";
             CurrentListItem.Description = "wtf";
-            this.homePage = homePage;
+            //this.homePage = homePage;
             InitializeComponent();
 
             populateItems();
@@ -39,7 +40,7 @@ namespace Gmina.Body
             ListItem[] listItems = new ListItem[n];
             for (int i = 0; i < listItems.Length; i++)
             {
-                listItems[i] = new ListItem(homePage,this);
+                listItems[i] = new ListItem();
                 listItems[i].Picture = Resources.image;
                 listItems[i].Title = "takkkkkkkkkkk"+i;
                 listItems[i].Description = "nieeeeeeeeeeeee";

@@ -61,13 +61,13 @@ namespace Gmina
             this.aboutCity2 = new Gmina.ButtonRounded();
             this.reservation2 = new Gmina.ButtonRounded();
             this.supportContactBody1 = new Gmina.Body.SupportContactBody();
-            this.eventsBody1 = new Gmina.Body.EventsBody(this);
             this.applicationsBody1 = new Gmina.Body.ApplicationsBody();
             this.electionsBody1 = new Gmina.Body.ElectionsBody();
             this.aboutCity1 = new Gmina.Body.AboutCity();
             this.menuBody = new Gmina.Body.MenuBody();
             this.taxesBody = new Gmina.Body.TaxesBody();
-            this.singleEvent1 = new Gmina.Body.SingleEvent(this.eventsBody1);
+            this.eventsBody1 = new Gmina.Body.EventsBody();
+            this.singleEvent2 = new Gmina.Body.SingleEvent();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -323,16 +323,6 @@ namespace Gmina
             this.supportContactBody1.TabIndex = 13;
             this.supportContactBody1.Load += new System.EventHandler(this.supportContactBody1_Load);
             // 
-            // eventsBody1
-            // 
-            this.eventsBody1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.eventsBody1.Location = new System.Drawing.Point(426, 180);
-            this.eventsBody1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.eventsBody1.Name = "eventsBody1";
-            this.eventsBody1.Size = new System.Drawing.Size(901, 876);
-            this.eventsBody1.TabIndex = 12;
-            this.eventsBody1.Load += new System.EventHandler(this.eventsBody1_Load);
-            // 
             // applicationsBody1
             // 
             this.applicationsBody1.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -380,34 +370,47 @@ namespace Gmina
             this.taxesBody.Size = new System.Drawing.Size(901, 876);
             this.taxesBody.TabIndex = 0;
             this.taxesBody.Load += new System.EventHandler(this.taxesBody_Load);
-
-
-
-
-            initSingleEvent();
-           
-           
-           
-           
-           
+            // 
+            // eventsBody1
+            // 
+            this.eventsBody1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.eventsBody1.Location = new System.Drawing.Point(426, 180);
+            this.eventsBody1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.eventsBody1.Name = "eventsBody1";
+            this.eventsBody1.Size = new System.Drawing.Size(901, 876);
+            this.eventsBody1.TabIndex = 16;
+            this.eventsBody1.Load += new System.EventHandler(this.eventsBody1_Load_1);
+            // 
+            // singleEvent2
+            // 
+            this.singleEvent2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.singleEvent2.Description = null;
+            this.singleEvent2.ForeColor = System.Drawing.Color.Black;
+            this.singleEvent2.Location = new System.Drawing.Point(426, 180);
+            this.singleEvent2.Name = "singleEvent2";
+            this.singleEvent2.Picture = null;
+            this.singleEvent2.Size = new System.Drawing.Size(901, 876);
+            this.singleEvent2.TabIndex = 17;
+            this.singleEvent2.Title = null;
+            this.singleEvent2.Load += new System.EventHandler(this.singleEvent2_Load);
             // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(90)))));
-            this.ClientSize = new System.Drawing.Size(1384, 1257);
-            this.Controls.Add(this.singleEvent1);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.supportContactBody1);
+            this.ClientSize = new System.Drawing.Size(1384, 1133);
+            this.Controls.Add(this.singleEvent2);
             this.Controls.Add(this.eventsBody1);
-            this.Controls.Add(this.applicationsBody1);
-            this.Controls.Add(this.electionsBody1);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.aboutCity1);
+            this.Controls.Add(this.applicationsBody1);
+            this.Controls.Add(this.electionsBody1);
             this.Controls.Add(this.menuBody);
             this.Controls.Add(this.taxesBody);
-            this.Controls.Add(this.aboutCity1);
+            this.Controls.Add(this.supportContactBody1);
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "HomePage";
             this.Text = "HomePage";
@@ -429,7 +432,6 @@ namespace Gmina
         private System.Windows.Forms.Panel panel2;
         private Body.ElectionsBody electionsBody1;
         private Body.ApplicationsBody applicationsBody1;
-        private Body.EventsBody eventsBody1;
         private Body.SupportContactBody supportContactBody1;
         private Body.AboutCity aboutCity1;
         private System.Windows.Forms.ImageList imageList1;
@@ -447,5 +449,7 @@ namespace Gmina
         private ButtonRounded profile2;
         private ButtonRounded settings2;
         private Body.SingleEvent singleEvent1;
+        private EventsBody eventsBody1;
+        private SingleEvent singleEvent2;
     }
 }

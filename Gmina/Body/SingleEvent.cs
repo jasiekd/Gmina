@@ -12,17 +12,17 @@ namespace Gmina.Body
 {
     public partial class SingleEvent : UserControl
     {
-        EventsBody eventsBody;
+        //EventsBody eventsBody;
 
-        public SingleEvent(EventsBody eventsBody)
+        public SingleEvent()
         {
             InitializeComponent();
-            this.eventsBody = eventsBody;
+            //this.eventsBody = eventsBody;
         }
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
         }
         private string _title;
         private string _description;
@@ -47,7 +47,7 @@ namespace Gmina.Body
 
         private void SingleEvent_Load(object sender, EventArgs e)
         {
-            lblDescription.Text = eventsBody.wtf();
+            //lblDescription.Text = eventsBody.wtf();
 
 
         }

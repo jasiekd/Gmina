@@ -12,13 +12,13 @@ namespace Gmina.Body
 {
     public partial class ListItem : UserControl
     {
-        HomePage homePage;
-        EventsBody eventsBody;
-        public ListItem(HomePage homePage, EventsBody eventsBody)
+       // HomePage homePage;
+       // EventsBody eventsBody;
+        public ListItem()
         {
             InitializeComponent();
-            this.homePage = homePage;
-            this.eventsBody = eventsBody;
+            //this.homePage = homePage;
+           // this.eventsBody = eventsBody;
         }
         private string _title;
         private string _description;
@@ -64,9 +64,14 @@ namespace Gmina.Body
 
         private void ListItem_MouseClick(object sender, MouseEventArgs e)
         {
-            eventsBody.CurrentListItem = this;
-            homePage.ShowSingleEvent();
+          //  eventsBody.CurrentListItem = this;
+           // homePage.ShowSingleEvent();
 
+        }
+
+        private void ShowSingleEvent_Click(object sender, EventArgs e)
+        {
+            //singleEvent1.Show();
         }
     }
 }

@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace Gmina.Body
 {
-    public partial class SupportContactBody : UserControl
+    public partial class AddApplication : UserControl
     {
-        public SupportContactBody()
+        public AddApplication()
         {
             InitializeComponent();
         }
 
-        private void SupportContactBody_Load(object sender, EventArgs e)
+        private void AddApplication_Load(object sender, EventArgs e)
         {
-
+           
         }
     }
 }
