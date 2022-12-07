@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System.Net;
-using System.Security.Policy;
-
-namespace GminaApi.Entity
+﻿namespace GminaApi.Entity
 {
     public class UserEntity : IEntity
     {
