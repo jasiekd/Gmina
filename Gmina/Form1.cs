@@ -1,4 +1,5 @@
-﻿using GminaApi.Entity;
+﻿using Azure;
+using GminaApi.Entity;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -41,23 +42,38 @@ namespace Gmina
             string Login = LoginBox.Text;
             string Password = PasswordBox.Text;
             string str = @"http://localhost:5066/api/User/" + Login + "/" + Password;
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(str);
-            request.Method = "POST";
-            request.Accept = "application/json";
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            try { 
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(str);
+                request.Method = "POST";
+                request.Accept = "application/json";
             
-            string json = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                using(HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                {
+                    string json = new StreamReader(response.GetResponseStream()).ReadToEnd();
 
-            UserEntity user = JsonConvert.DeserializeObject<UserEntity>(json);
+                    UserEntity user = JsonConvert.DeserializeObject<UserEntity>(json);
 
-            //if(user.Login==Login) {
-                this.Hide();
-                HomePage homePage = new HomePage();
-                //this.Show(homePage);
-                homePage.Show();
-                // HomePage.Hide();
-                //homePage1.Show();
-            //}
+                    
+                    this.Hide();
+                    HomePage homePage = new HomePage();
+                    //this.Show(homePage);
+                    homePage.Show();
+                    // HomePage.Hide();
+                    //homePage1.Show();
+                    
+                }
+            }
+            catch (WebException ex) {
+                int status = (int)(ex.Response as HttpWebResponse)?.StatusCode;
+                if (status == 404)
+                {
+                    //alert not found
+                }
+                else if (status == 500)
+                {
+                    //alert blad serwera
+                }
+            }            
         }     
     }
 }
