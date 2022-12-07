@@ -10,8 +10,4 @@
     <ProjectReference Include="..\Gmina.Dal\Gmina.Dal.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Entity\" />
-  </ItemGroup>
-
 </Project>
