@@ -65,8 +65,8 @@ namespace Gmina
             this.applicationsBody1 = new Gmina.Body.ApplicationsBody();
             this.electionsBody1 = new Gmina.Body.ElectionsBody();
             this.aboutCity1 = new Gmina.Body.AboutCity();
-            this.menuBody = new Gmina.MenuBody();
-            this.taxesBody = new Gmina.TaxesBody();
+            this.menuBody = new Gmina.Body.MenuBody();
+            this.taxesBody = new Gmina.Body.TaxesBody();
             this.singleEvent1 = new Gmina.Body.SingleEvent(this.eventsBody1);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();

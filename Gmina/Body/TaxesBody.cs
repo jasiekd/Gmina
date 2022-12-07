@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Gmina
+namespace Gmina.Body
 {
-    public partial class MenuBody : UserControl
+    public partial class TaxesBody : UserControl
     {
-        public MenuBody()
+        public TaxesBody()
         {
             InitializeComponent();
         }

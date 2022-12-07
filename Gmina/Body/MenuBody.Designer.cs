@@ -1,4 +1,4 @@
-﻿namespace Gmina
+﻿namespace Gmina.Body
 {
     partial class MenuBody
     {

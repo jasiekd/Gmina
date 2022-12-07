@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Gmina
 {
-    public partial class TaxesBody : UserControl
+    public partial class ClerkPage : Form
     {
-        public TaxesBody()
+        public ClerkPage()
         {
             InitializeComponent();
         }
