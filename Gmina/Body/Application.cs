@@ -7,17 +7,27 @@ using System.Threading.Tasks;
 
 namespace Gmina.Body
 {
-    internal class Application
+    internal class UserApplication 
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public DateTime Submission_Date { get; set; }
-        public string Status { get; set; }
-        public string Action { get; set; }
+        public List<String> elementName { get; set; }
+        public List<String> elementValue { get; set; }
 
-        public Application()
+        public ApplicationType applicationType { get; set; }
+        public DateTime datedOfApplication { get; set; }
+        public ApplicationStstus applicationStstus { get; set; }
+        public long userID { get; set; }
+        public long applicationID { get; set; }
+
+        public UserApplication(List<string> elementName, List<string> elementValue, ApplicationType applicationType, DateTime datedOfApplication, ApplicationStstus applicationStstus, long userID, long applicationID)
         {
-
+            this.elementName = elementName;
+            this.elementValue = elementValue;
+            this.applicationType = applicationType;
+            this.datedOfApplication = datedOfApplication;
+            this.applicationStstus = applicationStstus;
+            this.userID = userID;
+            this.applicationID = applicationID; 
         }
+
     }
 }

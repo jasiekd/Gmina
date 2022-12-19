@@ -35,32 +35,32 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(335, 30);
+            this.label1.Location = new System.Drawing.Point(293, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 46);
+            this.label1.Size = new System.Drawing.Size(186, 37);
             this.label1.TabIndex = 4;
             this.label1.Text = "Wydarzenia";
             // 
             // flowLayoutPanel
             // 
             this.flowLayoutPanel.AutoScroll = true;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 153);
+            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 146);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(900, 544);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(788, 510);
             this.flowLayoutPanel.TabIndex = 5;
             this.flowLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel_Paint);
             // 
             // EventsBody
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
             this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.label1);
             this.Name = "EventsBody";
-            this.Size = new System.Drawing.Size(900, 700);
+            this.Size = new System.Drawing.Size(788, 656);
             this.Load += new System.EventHandler(this.EventsBody_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -70,6 +70,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
+        private FlowLayoutPanel flowLayoutPanel;
     }
 }

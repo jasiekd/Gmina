@@ -36,21 +36,20 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(257, 38);
+            this.label1.Location = new System.Drawing.Point(225, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(385, 46);
+            this.label1.Size = new System.Drawing.Size(312, 37);
             this.label1.TabIndex = 4;
             this.label1.Text = "Kontakt z supportem";
             // 
             // SupportContactBody
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "SupportContactBody";
-            this.Size = new System.Drawing.Size(900, 875);
+            this.Size = new System.Drawing.Size(788, 656);
             this.Load += new System.EventHandler(this.SupportContactBody_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,6 +1,6 @@
 ﻿namespace Gmina.Body
 {
-    partial class ApplicationsBody
+    partial class Wnioski
     {
         /// <summary> 
         /// Required designer variable.
@@ -54,6 +54,10 @@
             // 
             // ApplicationsList
             // 
+            this.ApplicationsList.AllowUserToAddRows = false;
+            this.ApplicationsList.AllowUserToDeleteRows = false;
+            this.ApplicationsList.AllowUserToResizeRows = false;
+            this.ApplicationsList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
             this.ApplicationsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ApplicationsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -63,10 +67,13 @@
             this.Edit,
             this.Correct,
             this.Cancel});
-            this.ApplicationsList.Location = new System.Drawing.Point(39, 295);
+            this.ApplicationsList.Location = new System.Drawing.Point(0, 106);
+            this.ApplicationsList.MinimumSize = new System.Drawing.Size(788, 530);
             this.ApplicationsList.Name = "ApplicationsList";
+            this.ApplicationsList.ReadOnly = true;
+            this.ApplicationsList.RowHeadersVisible = false;
             this.ApplicationsList.RowTemplate.Height = 25;
-            this.ApplicationsList.Size = new System.Drawing.Size(704, 150);
+            this.ApplicationsList.Size = new System.Drawing.Size(788, 550);
             this.ApplicationsList.TabIndex = 5;
             this.ApplicationsList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ApplicationList_CellContentClick);
             // 
@@ -74,26 +81,34 @@
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 50;
             // 
             // Name
             // 
             this.Name.HeaderText = "Nazwa";
             this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            this.Name.Width = 250;
             // 
             // Submission_Date
             // 
             this.Submission_Date.HeaderText = "Data złożenia";
             this.Submission_Date.Name = "Submission_Date";
+            this.Submission_Date.ReadOnly = true;
+            this.Submission_Date.Width = 143;
             // 
             // Status
             // 
             this.Status.HeaderText = "Status";
             this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
             // 
             // Edit
             // 
             this.Edit.HeaderText = "Edytuj";
             this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
             this.Edit.Text = "Edytuj";
             this.Edit.ToolTipText = "Edytuj";
             this.Edit.UseColumnTextForButtonValue = true;
@@ -103,6 +118,7 @@
             // 
             this.Correct.HeaderText = "Popraw";
             this.Correct.Name = "Correct";
+            this.Correct.ReadOnly = true;
             this.Correct.Text = "Popraw";
             this.Correct.UseColumnTextForButtonValue = true;
             this.Correct.Width = 80;
@@ -111,17 +127,19 @@
             // 
             this.Cancel.HeaderText = "Anuluj";
             this.Cancel.Name = "Cancel";
+            this.Cancel.ReadOnly = true;
             this.Cancel.Text = "Anuluj";
             this.Cancel.UseColumnTextForButtonValue = true;
             this.Cancel.Width = 80;
             // 
             // AddApplication
             // 
-            this.AddApplication.BackColor = System.Drawing.Color.White;
+            this.AddApplication.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(148)))));
             this.AddApplication.FlatAppearance.BorderSize = 0;
             this.AddApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddApplication.ForeColor = System.Drawing.Color.Black;
-            this.AddApplication.Location = new System.Drawing.Point(528, 127);
+            this.AddApplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AddApplication.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.AddApplication.Location = new System.Drawing.Point(635, 60);
             this.AddApplication.Name = "AddApplication";
             this.AddApplication.Size = new System.Drawing.Size(150, 40);
             this.AddApplication.TabIndex = 6;
@@ -129,14 +147,15 @@
             this.AddApplication.UseVisualStyleBackColor = false;
             this.AddApplication.Click += new System.EventHandler(this.AddApplication_Click);
             // 
-            // ApplicationsBody
+            // Wnioski
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
             this.Controls.Add(this.AddApplication);
             this.Controls.Add(this.ApplicationsList);
             this.Controls.Add(this.label1);
+           // this.Name = "Wnioski";
             this.Size = new System.Drawing.Size(788, 656);
             ((System.ComponentModel.ISupportInitialize)(this.ApplicationsList)).EndInit();
             this.ResumeLayout(false);

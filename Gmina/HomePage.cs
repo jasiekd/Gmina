@@ -16,6 +16,11 @@ namespace Gmina
         public HomePage()
         {
             InitializeComponent();
+            menuBody.Show();
+            menuBody.BringToFront();
+            applicationsBody1.setSelectionScreen(applicationSelection1);
+            applicationSelection1.setCoalApplication(coalApplication1);
+            coalApplication1.setMenuBody(menuBody);
         }
 
         public void ShowSingleEvent()
@@ -141,6 +146,11 @@ namespace Gmina
         }
 
         private void singleEvent2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

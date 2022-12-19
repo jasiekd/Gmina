@@ -34,22 +34,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(372, 30);
+            this.label1.Location = new System.Drawing.Point(326, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 46);
+            this.label1.Size = new System.Drawing.Size(125, 37);
             this.label1.TabIndex = 2;
             this.label1.Text = "Wybory";
             // 
             // ElectionsBody
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
             this.Controls.Add(this.label1);
             this.Name = "ElectionsBody";
-            this.Size = new System.Drawing.Size(900, 700);
+            this.Size = new System.Drawing.Size(788, 656);
             this.Load += new System.EventHandler(this.ElectionsBody_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
