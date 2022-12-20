@@ -14,17 +14,17 @@ namespace Gmina.Body
 
         public ApplicationType applicationType { get; set; }
         public DateTime datedOfApplication { get; set; }
-        public ApplicationStstus applicationStstus { get; set; }
-        public long userID { get; set; }
-        public long applicationID { get; set; }
+        public ApplicationStatus applicationStatus { get; set; }
+        public int userID { get; set; }
+        public int applicationID { get; set; }
 
-        public UserApplication(List<string> elementName, List<string> elementValue, ApplicationType applicationType, DateTime datedOfApplication, ApplicationStstus applicationStstus, long userID, long applicationID)
+        public UserApplication(List<string> elementName, List<string> elementValue, ApplicationType applicationType, DateTime datedOfApplication, ApplicationStatus applicationStstus, int userID, int applicationID)
         {
             this.elementName = elementName;
             this.elementValue = elementValue;
             this.applicationType = applicationType;
             this.datedOfApplication = datedOfApplication;
-            this.applicationStstus = applicationStstus;
+            this.applicationStatus = applicationStstus;
             this.userID = userID;
             this.applicationID = applicationID; 
         }

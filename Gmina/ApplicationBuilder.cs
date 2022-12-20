@@ -10,11 +10,11 @@ namespace Gmina
     {
         List<String> elementName = new List<String>();
         List<String> elementValue = new List<String>();
-        long applicationID = -1;
+        int applicationID = -1;
         ApplicationType applicationType = ApplicationType.Non;
         DateTime datedOfApplication = new DateTime(0);
-        ApplicationStstus applicationStstus = ApplicationStstus.Non;
-        long userID = -1;
+        ApplicationStatus applicationStatus = ApplicationStatus.Non;
+        int userID = -1;
 
         public ApplicationBuilderInterface addApplicationElement(string name, string value)
         {
@@ -25,10 +25,10 @@ namespace Gmina
 
         public Body.UserApplication getResult()
         {
-            return new Body.UserApplication(elementName,elementValue,applicationType,datedOfApplication,applicationStstus,userID,applicationID);
+            return new Body.UserApplication(elementName,elementValue,applicationType,datedOfApplication,applicationStatus,userID,applicationID);
         }
 
-        public ApplicationBuilderInterface setApplicationID(long id)
+        public ApplicationBuilderInterface setApplicationID(int id)
         {
             this.applicationID = id;
             return this;
@@ -46,13 +46,13 @@ namespace Gmina
             return this;
         }
 
-        public ApplicationBuilderInterface setStatus(ApplicationStstus status)
+        public ApplicationBuilderInterface setStatus(ApplicationStatus status)
         {
-            this.applicationStstus = status;
+            this.applicationStatus = status;
             return this;
         }
 
-        public ApplicationBuilderInterface setUserID(long id)
+        public ApplicationBuilderInterface setUserID(int id)
         {
             this.userID = id;
             return this;
