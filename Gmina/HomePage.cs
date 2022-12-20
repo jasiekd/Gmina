@@ -129,7 +129,8 @@ namespace Gmina
 
         private void profileButtonAction(object sender, EventArgs e)
         {
-
+            profileBody1.Show();
+            profileBody1.BringToFront();
         }
 
         private void settingsButtonAction(object sender, EventArgs e)
@@ -155,6 +156,11 @@ namespace Gmina
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void profileBody1_Load(object sender, EventArgs e)
+        {
+            profileBody1.Hide();
         }
     }
 }
