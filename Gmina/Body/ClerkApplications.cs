@@ -26,7 +26,7 @@ namespace Gmina.Body
             foreach (Body.UserApplication item in data)
             {
 
-                ApplicationsList.Rows.Add(item.applicationID, item.applicationType, item.datedOfApplication.ToString(), item.applicationStstus);
+                ApplicationsList.Rows.Add(item.applicationID, item.applicationType, item.datedOfApplication.ToString(), item.applicationStatus);
             }
             foreach (DataGridViewRow row in ApplicationsList.Rows)
             {
@@ -43,22 +43,22 @@ namespace Gmina.Body
 
 
             var list = new List<Body.UserApplication>();
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa,tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue,  ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa,tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa,tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue,  ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa,tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
 
 
             return list;
@@ -71,7 +71,7 @@ namespace Gmina.Body
                 ApplicationInfo info = new ApplicationInfo();
                 foreach(var i in data )
                 {
-                    if(i.applicationID == (long)ApplicationsList.Rows[e.RowIndex].Cells[0].Value)
+                    if(i.applicationID == (int)ApplicationsList.Rows[e.RowIndex].Cells[0].Value)
                     {
                         ApplicationInfo.Application = i;
                         info.setClerkApplicationView(this);

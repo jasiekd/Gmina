@@ -55,7 +55,7 @@ namespace Gmina
             {
                 if(clerkApplications!=null)
                 {
-                    application.applicationStstus = ApplicationStstus.Accepted;
+                    application.applicationStatus = ApplicationStatus.Accepted;
                     //To do: zmianan statusu wniosku po stronie serwera
                     clerkApplications.createTable();
                     clerkApplications.Show();
@@ -77,7 +77,7 @@ namespace Gmina
 
             if (result == DialogResult.Yes)
             {
-                application.applicationStstus = ApplicationStstus.Improvement;
+                application.applicationStatus = ApplicationStatus.Improvement;
                 //To do: zmianan statusu wniosku po stronie serwera
                 clerkApplications.createTable();
                 clerkApplications.Show();
@@ -96,7 +96,7 @@ namespace Gmina
 
             if (result == DialogResult.Yes)
             {
-                application.applicationStstus = ApplicationStstus.Rejected;
+                application.applicationStatus = ApplicationStatus.Rejected;
                 //To do: zmianan statusu wniosku po stronie serwera
                 clerkApplications.createTable();
                 clerkApplications.Show();
