@@ -55,14 +55,20 @@ namespace Gmina
 
                     UserEntity user = JsonConvert.DeserializeObject<UserEntity>(json);
 
-                    
-                    this.Hide();
-                    HomePage homePage = new HomePage();
-                    //this.Show(homePage);
-                    homePage.Show();
-                    // HomePage.Hide();
-                    //homePage1.Show();
-                    
+                    Trace.WriteLine(user.RoleId);
+                    if(user.RoleId == 0)
+                    {
+                        this.Hide();
+                        HomePage homePage = new HomePage();
+                        homePage.Show();
+                    }
+                    else
+                    {
+                        ClerkPage clerkPage = new ClerkPage();
+                        clerkPage.Show();
+                    }
+
+
                 }
             }
             catch (WebException ex) {
