@@ -155,8 +155,9 @@
             this.Controls.Add(this.AddApplication);
             this.Controls.Add(this.ApplicationsList);
             this.Controls.Add(this.label1);
-           // this.Name = "Wnioski";
+    
             this.Size = new System.Drawing.Size(788, 656);
+            this.Load += new System.EventHandler(this.Wnioski_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ApplicationsList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

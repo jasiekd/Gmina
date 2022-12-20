@@ -55,7 +55,7 @@ namespace Gmina
 
                     UserEntity user = JsonConvert.DeserializeObject<UserEntity>(json);
 
-                    if(user.RoleId == 1)
+                    if(user.RoleId == 2)
                     {
                         this.Hide();
                         HomePage.user = user;

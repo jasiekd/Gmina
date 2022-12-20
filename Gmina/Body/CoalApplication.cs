@@ -51,7 +51,7 @@ namespace Gmina.Body
                     .setUserID(1)
                     .setDatedOfApplication(DateTime.Now)
                     .setApplicationType(ApplicationType.Coal)
-                    .setStatus(ApplicationStstus.Submitted)
+                    .setStatus(ApplicationStatus.Submitted)
                     .addApplicationElement("numer konta",accountNumber.Text.ToString())
                     .addApplicationElement("imię i nazwisko właściciela rachunku",ownerName.Text.ToString())
                     .addApplicationElement("liczba mieszkańców",inhabitantCounter.Text.ToString())

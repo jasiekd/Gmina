@@ -13,15 +13,20 @@ namespace Gmina.Body
 {
     public partial class ClerkApplications : UserControl
     {
+        List<Body.UserApplication> data;
         public ClerkApplications()
         {
             InitializeComponent();
-            List<Body.UserApplication> data = LoadData();
+            createTable();
+        }
+        public void createTable()
+        {
+            data = LoadData();
             ApplicationsList.Rows.Clear();
             foreach (Body.UserApplication item in data)
             {
 
-                ApplicationsList.Rows.Add(item.applicationID, item.applicationType, item.datedOfApplication.ToString(), item.applicationStstus);
+                ApplicationsList.Rows.Add(item.applicationID, item.applicationType, item.datedOfApplication.ToString(), item.applicationStatus);
             }
             foreach (DataGridViewRow row in ApplicationsList.Rows)
             {
@@ -32,34 +37,48 @@ namespace Gmina.Body
         private List<Body.UserApplication> LoadData()
         {
             // pobranie danych o wnioskach z serwera
+
+            List<String> tmpNazwa = new List<String>() { "t1", "t2", "t3", "t4", "t5", "t6", "t7", "t8", "t9", "t10" };
+            List<String> tmpValue = new List<String>() { "e1", "e2", "e3", "e4", "e5", "e6", "e7", "e8", "e9", "e10" };
+
+
             var list = new List<Body.UserApplication>();
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500, DateTime.Now, ApplicationStstus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa,tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue,  ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa,tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
 
 
             return list;
         }
         private void ApplicationsList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (ApplicationsList.Columns[e.ColumnIndex].Name == "Edit")
+            if (ApplicationsList.Columns[e.ColumnIndex].Name == "AppDecision")
             {
-                Trace.WriteLine("działa Edit" + ApplicationsList.Rows[e.RowIndex].Cells[0].Value);
-
-
+                
+                ApplicationInfo info = new ApplicationInfo();
+                foreach(var i in data )
+                {
+                    if(i.applicationID == (int)ApplicationsList.Rows[e.RowIndex].Cells[0].Value)
+                    {
+                        ApplicationInfo.Application = i;
+                        info.setClerkApplicationView(this);
+                        info.ShowDialog();
+                        break;
+                    }
+                }
             }
         }
         private void dataGridView_SelectionChanged(object sender, EventArgs e)

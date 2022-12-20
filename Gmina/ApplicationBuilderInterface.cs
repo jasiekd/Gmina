@@ -9,16 +9,16 @@ namespace Gmina
     enum ApplicationType{
         Coal,Plus500,IDCard,Shielding,Non
     }
-    enum ApplicationStstus
+    enum ApplicationStatus
     {
         Submitted,Accepted,Rejected,Improvement,Canceled,Non
     }
     internal interface ApplicationBuilderInterface
     {
-        public ApplicationBuilderInterface setUserID(long id);
-        public ApplicationBuilderInterface setApplicationID(long id);
+        public ApplicationBuilderInterface setUserID(int id);
+        public ApplicationBuilderInterface setApplicationID(int id);
         public ApplicationBuilderInterface setDatedOfApplication(DateTime date);
-        public ApplicationBuilderInterface setStatus(ApplicationStstus status);
+        public ApplicationBuilderInterface setStatus(ApplicationStatus status);
         public ApplicationBuilderInterface setApplicationType(ApplicationType type);
         public ApplicationBuilderInterface addApplicationElement(String name, String value);
         public Body.UserApplication getResult();
