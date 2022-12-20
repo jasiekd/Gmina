@@ -40,9 +40,9 @@ namespace Gmina
         private void LoginButton_Click(object sender, EventArgs e)
         {
             string Login = LoginBox.Text;
-            Login = "admin.tadek1";
+            //Login = "admin.tadek1";
             string Password = PasswordBox.Text;
-            Password = "12345";
+            //Password = "12345";
             string str = @"http://localhost:5066/api/User/" + Login + "/" + Password;
             try { 
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(str);
@@ -55,16 +55,17 @@ namespace Gmina
 
                     UserEntity user = JsonConvert.DeserializeObject<UserEntity>(json);
 
-                    Trace.WriteLine(user.RoleId);
-                    if(user.RoleId == 0)
+                    if(user.RoleId == 1)
                     {
                         this.Hide();
                         HomePage homePage = new HomePage();
+                        homePage.setUser(user);
                         homePage.Show();
                     }
                     else
                     {
                         ClerkPage clerkPage = new ClerkPage();
+                        clerkPage.setUser(user);
                         clerkPage.Show();
                     }
 

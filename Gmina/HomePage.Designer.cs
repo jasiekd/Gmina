@@ -1,4 +1,5 @@
 ﻿using Gmina.Body;
+using GminaApi.Entity;
 
 namespace Gmina
 {
@@ -33,6 +34,11 @@ namespace Gmina
                 components.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public void setUser(UserEntity user)
+        {
+            this.user = user;
         }
 
         #region Windows Form Designer generated code
@@ -519,5 +525,7 @@ namespace Gmina
         private ApplicationSelection applicationSelection1;
         private CoalApplication coalApplication1;
         private Plus500Application plus500Application1;
+        private UserEntity user;
+        
     }
 }
