@@ -104,5 +104,22 @@ namespace Gmina_Api.Controllers
         {
             return _context.UsersApplications.Any(e => e.ID == id);
         }
+
+        [HttpGet("LastApplication/{userId}")]
+        public async Task<ActionResult<int>> GetLastApplicationForUser(int userId)
+        {
+            var lastApplicationEntity = _context.UsersApplications.Where(z=>z.UserId==userId)
+                                                                  .OrderBy(z=>z.DatePosted)                                                   
+                                                                  .LastOrDefault();
+
+            if (lastApplicationEntity == null)
+            {
+                return NotFound();
+            }
+
+            return lastApplicationEntity.ID;
+        }
+
+
     }
 }
