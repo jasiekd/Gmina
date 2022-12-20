@@ -10,27 +10,42 @@ using System.Windows.Forms;
 using GminaApi;
 using GminaApi.Controllers;
 using Gmina_Api;
+using GminaApi.Entity;
+
 namespace Gmina.Body
 {
     public partial class ProfileBody : UserControl
     {
-        public ProfileBody()
+        private UserEntity user;
+        public void setUser(UserEntity user)
         {
-            InitializeComponent();
-            
+            this.user = user;
 
-
-            namelbl.Text = "Piotr";
-            surnamelbl.Text = "Nowak";
-            pesellbl.Text = "12345678911";
-            placelbl.Text = "Sobków";
-            streetlbl.Text = "kielecka";
-            homeNumberlbl.Text = "10a";
-            zipCodelbl.Text = "28-305";
-            phoneNumberlbl.Text = "123456789";
-            emailaddreslbl.Text = "piotr.nowak@poczta.pl";
         }
 
+        public ProfileBody()
+        {
+
+            InitializeComponent();
+
+
+
+           
+        }
+        public void SetUserProfileLabels()
+        {
+            namelbl.Text = user.Name;
+            surnamelbl.Text = "Kowalski";
+            pesellbl.Text = "";
+            placelbl.Text = "";
+            streetlbl.Text = user.Address;
+            homeNumberlbl.Text = "";
+            zipCodelbl.Text = "";
+            phoneNumberlbl.Text = user.PhoneNumber;
+            emailaddreslbl.Text = user.Email;
+            birthdatelbl.Text = user.BirthDate.ToString();
+            dateAddedlbl.Text = user.DateAdded.ToString();
+        }
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 

@@ -30,14 +30,13 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.namelbl = new System.Windows.Forms.Label();
@@ -49,6 +48,11 @@
             this.zipCodelbl = new System.Windows.Forms.Label();
             this.phoneNumberlbl = new System.Windows.Forms.Label();
             this.emailaddreslbl = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.birthdatelbl = new System.Windows.Forms.Label();
+            this.dateAddedlbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -86,9 +90,13 @@
             this.tableLayoutPanel1.Controls.Add(this.zipCodelbl, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.phoneNumberlbl, 2, 7);
             this.tableLayoutPanel1.Controls.Add(this.emailaddreslbl, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.label12, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.birthdatelbl, 2, 9);
+            this.tableLayoutPanel1.Controls.Add(this.dateAddedlbl, 2, 10);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 10);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 10;
+            this.tableLayoutPanel1.RowCount = 13;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
@@ -99,32 +107,12 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(878, 849);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(878, 729);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label2.Location = new System.Drawing.Point(335, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(215, 46);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Twój profil";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label3.Location = new System.Drawing.Point(159, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 23);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Imię";
             // 
             // label1
             // 
@@ -197,6 +185,18 @@
             this.label8.Size = new System.Drawing.Size(110, 23);
             this.label8.TabIndex = 8;
             this.label8.Text = "numer domu";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.label3.Location = new System.Drawing.Point(159, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 23);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Imię";
             // 
             // label9
             // 
@@ -321,6 +321,63 @@
             this.emailaddreslbl.TabIndex = 19;
             this.emailaddreslbl.Text = "*";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.label2.Location = new System.Drawing.Point(335, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(215, 46);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Twój profil";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.label11.Location = new System.Drawing.Point(117, 270);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(127, 23);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Data urodzenia";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.label12.Location = new System.Drawing.Point(124, 300);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(113, 23);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Data dodania";
+            // 
+            // birthdatelbl
+            // 
+            this.birthdatelbl.AutoSize = true;
+            this.birthdatelbl.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.birthdatelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.birthdatelbl.Location = new System.Drawing.Point(304, 270);
+            this.birthdatelbl.Name = "birthdatelbl";
+            this.birthdatelbl.Size = new System.Drawing.Size(17, 23);
+            this.birthdatelbl.TabIndex = 23;
+            this.birthdatelbl.Text = "*";
+            // 
+            // dateAddedlbl
+            // 
+            this.dateAddedlbl.AutoSize = true;
+            this.dateAddedlbl.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dateAddedlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.dateAddedlbl.Location = new System.Drawing.Point(304, 300);
+            this.dateAddedlbl.Name = "dateAddedlbl";
+            this.dateAddedlbl.Size = new System.Drawing.Size(17, 23);
+            this.dateAddedlbl.TabIndex = 24;
+            this.dateAddedlbl.Text = "*";
+            // 
             // ProfileBody
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -362,5 +419,9 @@
         private Label zipCodelbl;
         private Label phoneNumberlbl;
         private Label emailaddreslbl;
+        private Label label11;
+        private Label label12;
+        private Label birthdatelbl;
+        private Label dateAddedlbl;
     }
 }

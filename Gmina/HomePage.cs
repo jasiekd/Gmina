@@ -13,8 +13,10 @@ namespace Gmina
 {
     public partial class HomePage : Form
     {
+
         public HomePage()
         {
+
             InitializeComponent();
             menuBody.Show();
             menuBody.BringToFront();
@@ -23,6 +25,8 @@ namespace Gmina
             applicationSelection1.setPlus500Application(plus500Application1);
             coalApplication1.setMenuBody(menuBody);
             plus500Application1.setMenuBody(menuBody);
+            profileBody1.setUser(user);
+            profileBody1.SetUserProfileLabels();
         }
 
         public void ShowSingleEvent()

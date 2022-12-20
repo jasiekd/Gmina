@@ -514,11 +514,7 @@ namespace Gmina
         }
 
         #endregion
-        public void setUser(UserEntity user)
-        {
-            this.user = user;
-
-        }
+      
 
         private TaxesBody taxesBody;
         private MenuBody menuBody;
@@ -552,6 +548,7 @@ namespace Gmina
         private CoalApplication coalApplication1;
         private Plus500Application plus500Application1;
         private ProfileBody profileBody1;
-        private UserEntity user;
+        public static UserEntity user;
+        
     }
 }

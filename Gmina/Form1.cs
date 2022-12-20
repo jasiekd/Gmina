@@ -58,8 +58,9 @@ namespace Gmina
                     if(user.RoleId == 1)
                     {
                         this.Hide();
+                        HomePage.user = user;
                         HomePage homePage = new HomePage();
-                        homePage.setUser(user);
+    
                         homePage.Show();
                     }
                     else
