@@ -21,5 +21,25 @@ namespace Gmina
         {
 
         }
+
+        private void logOut_Click(object sender, EventArgs e)
+        {
+            Form1 newLogin = new Form1();
+            user = null;
+            DialogResult result = MessageBox.Show("Czy napewno wylogować z systemu?", "Wylogowanie", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(result==DialogResult.Yes)
+            {
+                newLogin.Show();
+                this.Close();
+            }
+            
+           
+        }
+
+        private void ApplicationsButton_Click(object sender, EventArgs e)
+        {
+            clerkApplications1.Show();
+            clerkApplications1.BringToFront();
+        }
     }
 }

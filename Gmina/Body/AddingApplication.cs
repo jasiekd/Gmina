@@ -106,5 +106,10 @@ namespace Gmina.Body
             }
             
         }
+
+        private void Wnioski_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

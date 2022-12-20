@@ -48,10 +48,9 @@ namespace Gmina
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.logOut = new Gmina.ButtonRounded();
             this.profile2 = new Gmina.ButtonRounded();
             this.settings2 = new Gmina.ButtonRounded();
-            this.aboutCity2 = new Gmina.ButtonRounded();
-            this.reservation2 = new Gmina.ButtonRounded();
             this.clerkApplications1 = new Gmina.Body.ClerkApplications();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -188,6 +187,7 @@ namespace Gmina
             this.ApplicationsButton.TabIndex = 18;
             this.ApplicationsButton.Text = "Rozpatrywanie Wniosków";
             this.ApplicationsButton.UseVisualStyleBackColor = false;
+            this.ApplicationsButton.Click += new System.EventHandler(this.ApplicationsButton_Click);
             // 
             // ElectionsButton
             // 
@@ -240,15 +240,31 @@ namespace Gmina
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
+            this.panel3.Controls.Add(this.logOut);
             this.panel3.Controls.Add(this.profile2);
             this.panel3.Controls.Add(this.settings2);
-            this.panel3.Controls.Add(this.aboutCity2);
-            this.panel3.Controls.Add(this.reservation2);
             this.panel3.Location = new System.Drawing.Point(373, 12);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(788, 65);
             this.panel3.TabIndex = 20;
+            // 
+            // logOut
+            // 
+            this.logOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(148)))));
+            this.logOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logOut.FlatAppearance.BorderSize = 0;
+            this.logOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.logOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.logOut.Location = new System.Drawing.Point(682, 19);
+            this.logOut.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.logOut.Name = "logOut";
+            this.logOut.Size = new System.Drawing.Size(88, 27);
+            this.logOut.TabIndex = 25;
+            this.logOut.Text = "Wyloguj";
+            this.logOut.UseVisualStyleBackColor = false;
+            this.logOut.Click += new System.EventHandler(this.logOut_Click);
             // 
             // profile2
             // 
@@ -258,7 +274,7 @@ namespace Gmina
             this.profile2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.profile2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.profile2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.profile2.Location = new System.Drawing.Point(588, 17);
+            this.profile2.Location = new System.Drawing.Point(489, 17);
             this.profile2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.profile2.Name = "profile2";
             this.profile2.Size = new System.Drawing.Size(88, 27);
@@ -274,45 +290,13 @@ namespace Gmina
             this.settings2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.settings2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.settings2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.settings2.Location = new System.Drawing.Point(682, 17);
+            this.settings2.Location = new System.Drawing.Point(585, 19);
             this.settings2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.settings2.Name = "settings2";
             this.settings2.Size = new System.Drawing.Size(88, 27);
             this.settings2.TabIndex = 24;
             this.settings2.Text = "Ustawienia";
             this.settings2.UseVisualStyleBackColor = false;
-            // 
-            // aboutCity2
-            // 
-            this.aboutCity2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(148)))));
-            this.aboutCity2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.aboutCity2.FlatAppearance.BorderSize = 0;
-            this.aboutCity2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aboutCity2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.aboutCity2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.aboutCity2.Location = new System.Drawing.Point(270, 17);
-            this.aboutCity2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.aboutCity2.Name = "aboutCity2";
-            this.aboutCity2.Size = new System.Drawing.Size(88, 27);
-            this.aboutCity2.TabIndex = 22;
-            this.aboutCity2.Text = "O mieście";
-            this.aboutCity2.UseVisualStyleBackColor = false;
-            // 
-            // reservation2
-            // 
-            this.reservation2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(148)))));
-            this.reservation2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.reservation2.FlatAppearance.BorderSize = 0;
-            this.reservation2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reservation2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.reservation2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.reservation2.Location = new System.Drawing.Point(26, 17);
-            this.reservation2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.reservation2.Name = "reservation2";
-            this.reservation2.Size = new System.Drawing.Size(220, 27);
-            this.reservation2.TabIndex = 21;
-            this.reservation2.Text = "Rezerwacja wizyty w urzędzie";
-            this.reservation2.UseVisualStyleBackColor = false;
             // 
             // clerkApplications1
             // 
@@ -365,10 +349,8 @@ namespace Gmina
         private Panel panel3;
         private ButtonRounded profile2;
         private ButtonRounded settings2;
-        private ButtonRounded aboutCity2;
-        private ButtonRounded reservation2;
         private Body.ClerkApplications clerkApplications1;
         private UserEntity user;
-
+        private ButtonRounded logOut;
     }
 }
