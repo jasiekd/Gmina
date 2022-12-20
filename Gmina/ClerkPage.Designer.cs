@@ -1,4 +1,6 @@
-﻿namespace Gmina
+﻿using GminaApi.Entity;
+
+namespace Gmina
 {
     partial class ClerkPage
     {
@@ -20,6 +22,10 @@
             base.Dispose(disposing);
         }
 
+        public void setUser(UserEntity user)
+        {
+            this.user = user;
+        }
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -362,5 +368,7 @@
         private ButtonRounded aboutCity2;
         private ButtonRounded reservation2;
         private Body.ClerkApplications clerkApplications1;
+        private UserEntity user;
+
     }
 }
