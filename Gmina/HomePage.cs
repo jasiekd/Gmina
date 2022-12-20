@@ -123,8 +123,8 @@ namespace Gmina
 
         private void aboutButtonAction(object sender, EventArgs e)
         {
-            aboutCity1.Show();
-            aboutCity1.BringToFront();
+           // aboutCity1.Show();
+           // aboutCity1.BringToFront();
         }
 
         private void profileButtonAction(object sender, EventArgs e)

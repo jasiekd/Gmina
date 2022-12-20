@@ -64,7 +64,6 @@ namespace Gmina
             this.applicationsBody1 = new Gmina.Body.Wnioski();
             this.applicationSelection1 = new Gmina.Body.ApplicationSelection();
             this.electionsBody1 = new Gmina.Body.ElectionsBody();
-            this.aboutCity1 = new Gmina.Body.AboutCity();
             this.menuBody = new Gmina.Body.MenuBody();
             this.taxesBody = new Gmina.Body.TaxesBody();
             this.eventsBody1 = new Gmina.Body.EventsBody();
@@ -359,14 +358,6 @@ namespace Gmina
             this.electionsBody1.TabIndex = 10;
             this.electionsBody1.Load += new System.EventHandler(this.electionsBody_Load);
             // 
-            // aboutCity1
-            // 
-            this.aboutCity1.Location = new System.Drawing.Point(0, 0);
-            this.aboutCity1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.aboutCity1.Name = "aboutCity1";
-            this.aboutCity1.Size = new System.Drawing.Size(175, 173);
-            this.aboutCity1.TabIndex = 15;
-            // 
             // menuBody
             // 
             this.menuBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
@@ -473,7 +464,6 @@ namespace Gmina
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.aboutCity1);
             this.Controls.Add(this.applicationsBody1);
             this.Controls.Add(this.electionsBody1);
             this.Controls.Add(this.menuBody);
@@ -506,7 +496,6 @@ namespace Gmina
         private Body.ElectionsBody electionsBody1;
         private Body.Wnioski applicationsBody1;
         private Body.SupportContactBody supportContactBody1;
-        private Body.AboutCity aboutCity1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label appName;

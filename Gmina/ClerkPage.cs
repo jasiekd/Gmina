@@ -16,5 +16,10 @@ namespace Gmina
         {
             InitializeComponent();
         }
+
+        private void ClerkPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
