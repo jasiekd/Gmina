@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonRounded1 = new Gmina.ButtonRounded();
-            this.buttonRounded2 = new Gmina.ButtonRounded();
-            this.buttonRounded3 = new Gmina.ButtonRounded();
-            this.buttonRounded4 = new Gmina.ButtonRounded();
+            this.add500plusAppButton = new Gmina.ButtonRounded();
+            this.addCoalAppButton = new Gmina.ButtonRounded();
+            this.addShieldingAppButton = new Gmina.ButtonRounded();
+            this.addIDCardAppButton = new Gmina.ButtonRounded();
             this.SuspendLayout();
             // 
             // label1
@@ -46,72 +46,73 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Wybór wniosku";
             // 
-            // buttonRounded1
+            // add500plusAppButton
             // 
-            this.buttonRounded1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(148)))));
-            this.buttonRounded1.FlatAppearance.BorderSize = 0;
-            this.buttonRounded1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRounded1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonRounded1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.buttonRounded1.Location = new System.Drawing.Point(448, 132);
-            this.buttonRounded1.Name = "buttonRounded1";
-            this.buttonRounded1.Size = new System.Drawing.Size(262, 192);
-            this.buttonRounded1.TabIndex = 1;
-            this.buttonRounded1.Text = "500+";
-            this.buttonRounded1.UseVisualStyleBackColor = false;
+            this.add500plusAppButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(148)))));
+            this.add500plusAppButton.FlatAppearance.BorderSize = 0;
+            this.add500plusAppButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add500plusAppButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.add500plusAppButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.add500plusAppButton.Location = new System.Drawing.Point(448, 132);
+            this.add500plusAppButton.Name = "add500plusAppButton";
+            this.add500plusAppButton.Size = new System.Drawing.Size(262, 192);
+            this.add500plusAppButton.TabIndex = 1;
+            this.add500plusAppButton.Text = "500+";
+            this.add500plusAppButton.UseVisualStyleBackColor = false;
+            this.add500plusAppButton.Click += new System.EventHandler(this.add500plusAppButton_Click);
             // 
-            // buttonRounded2
+            // addCoalAppButton
             // 
-            this.buttonRounded2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(148)))));
-            this.buttonRounded2.FlatAppearance.BorderSize = 0;
-            this.buttonRounded2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRounded2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonRounded2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.buttonRounded2.Location = new System.Drawing.Point(80, 132);
-            this.buttonRounded2.Name = "buttonRounded2";
-            this.buttonRounded2.Size = new System.Drawing.Size(262, 192);
-            this.buttonRounded2.TabIndex = 2;
-            this.buttonRounded2.Text = "Dopłata do węgla";
-            this.buttonRounded2.UseVisualStyleBackColor = false;
-            this.buttonRounded2.Click += new System.EventHandler(this.buttonRounded2_Click);
+            this.addCoalAppButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(148)))));
+            this.addCoalAppButton.FlatAppearance.BorderSize = 0;
+            this.addCoalAppButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addCoalAppButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.addCoalAppButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.addCoalAppButton.Location = new System.Drawing.Point(80, 132);
+            this.addCoalAppButton.Name = "addCoalAppButton";
+            this.addCoalAppButton.Size = new System.Drawing.Size(262, 192);
+            this.addCoalAppButton.TabIndex = 2;
+            this.addCoalAppButton.Text = "Dopłata do węgla";
+            this.addCoalAppButton.UseVisualStyleBackColor = false;
+            this.addCoalAppButton.Click += new System.EventHandler(this.buttonRounded2_Click);
             // 
-            // buttonRounded3
+            // addShieldingAppButton
             // 
-            this.buttonRounded3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(148)))));
-            this.buttonRounded3.FlatAppearance.BorderSize = 0;
-            this.buttonRounded3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRounded3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonRounded3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.buttonRounded3.Location = new System.Drawing.Point(80, 399);
-            this.buttonRounded3.Name = "buttonRounded3";
-            this.buttonRounded3.Size = new System.Drawing.Size(262, 192);
-            this.buttonRounded3.TabIndex = 3;
-            this.buttonRounded3.Text = "Dodatek osłonowy";
-            this.buttonRounded3.UseVisualStyleBackColor = false;
+            this.addShieldingAppButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(148)))));
+            this.addShieldingAppButton.FlatAppearance.BorderSize = 0;
+            this.addShieldingAppButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addShieldingAppButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.addShieldingAppButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.addShieldingAppButton.Location = new System.Drawing.Point(80, 399);
+            this.addShieldingAppButton.Name = "addShieldingAppButton";
+            this.addShieldingAppButton.Size = new System.Drawing.Size(262, 192);
+            this.addShieldingAppButton.TabIndex = 3;
+            this.addShieldingAppButton.Text = "Dodatek osłonowy";
+            this.addShieldingAppButton.UseVisualStyleBackColor = false;
             // 
-            // buttonRounded4
+            // addIDCardAppButton
             // 
-            this.buttonRounded4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(148)))));
-            this.buttonRounded4.FlatAppearance.BorderSize = 0;
-            this.buttonRounded4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRounded4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonRounded4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.buttonRounded4.Location = new System.Drawing.Point(448, 399);
-            this.buttonRounded4.Name = "buttonRounded4";
-            this.buttonRounded4.Size = new System.Drawing.Size(262, 192);
-            this.buttonRounded4.TabIndex = 4;
-            this.buttonRounded4.Text = "Wyrobienie dowodu";
-            this.buttonRounded4.UseVisualStyleBackColor = false;
+            this.addIDCardAppButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(148)))));
+            this.addIDCardAppButton.FlatAppearance.BorderSize = 0;
+            this.addIDCardAppButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addIDCardAppButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.addIDCardAppButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.addIDCardAppButton.Location = new System.Drawing.Point(448, 399);
+            this.addIDCardAppButton.Name = "addIDCardAppButton";
+            this.addIDCardAppButton.Size = new System.Drawing.Size(262, 192);
+            this.addIDCardAppButton.TabIndex = 4;
+            this.addIDCardAppButton.Text = "Wyrobienie dowodu";
+            this.addIDCardAppButton.UseVisualStyleBackColor = false;
             // 
             // ApplicationSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
-            this.Controls.Add(this.buttonRounded4);
-            this.Controls.Add(this.buttonRounded3);
-            this.Controls.Add(this.buttonRounded2);
-            this.Controls.Add(this.buttonRounded1);
+            this.Controls.Add(this.addIDCardAppButton);
+            this.Controls.Add(this.addShieldingAppButton);
+            this.Controls.Add(this.addCoalAppButton);
+            this.Controls.Add(this.add500plusAppButton);
             this.Controls.Add(this.label1);
             this.Name = "ApplicationSelection";
             this.Size = new System.Drawing.Size(788, 661);
@@ -123,9 +124,9 @@
         #endregion
 
         private Label label1;
-        private ButtonRounded buttonRounded1;
-        private ButtonRounded buttonRounded2;
-        private ButtonRounded buttonRounded3;
-        private ButtonRounded buttonRounded4;
+        private ButtonRounded add500plusAppButton;
+        private ButtonRounded addCoalAppButton;
+        private ButtonRounded addShieldingAppButton;
+        private ButtonRounded addIDCardAppButton;
     }
 }

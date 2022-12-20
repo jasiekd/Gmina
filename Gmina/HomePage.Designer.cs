@@ -73,6 +73,7 @@ namespace Gmina
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.coalApplication1 = new Gmina.Body.CoalApplication();
+            this.plus500Application1 = new Gmina.Body.Plus500Application();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -449,12 +450,21 @@ namespace Gmina
             this.coalApplication1.Size = new System.Drawing.Size(788, 656);
             this.coalApplication1.TabIndex = 20;
             // 
+            // plus500Application1
+            // 
+            this.plus500Application1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
+            this.plus500Application1.Location = new System.Drawing.Point(373, 135);
+            this.plus500Application1.Name = "plus500Application1";
+            this.plus500Application1.Size = new System.Drawing.Size(788, 656);
+            this.plus500Application1.TabIndex = 21;
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(90)))));
             this.ClientSize = new System.Drawing.Size(1211, 863);
+            this.Controls.Add(this.plus500Application1);
             this.Controls.Add(this.coalApplication1);
             this.Controls.Add(this.applicationSelection1);
             this.Controls.Add(this.panel4);
@@ -519,5 +529,6 @@ namespace Gmina
         private Label label1;
         private ApplicationSelection applicationSelection1;
         private CoalApplication coalApplication1;
+        private Plus500Application plus500Application1;
     }
 }

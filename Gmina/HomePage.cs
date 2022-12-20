@@ -20,7 +20,9 @@ namespace Gmina
             menuBody.BringToFront();
             applicationsBody1.setSelectionScreen(applicationSelection1);
             applicationSelection1.setCoalApplication(coalApplication1);
+            applicationSelection1.setPlus500Application(plus500Application1);
             coalApplication1.setMenuBody(menuBody);
+            plus500Application1.setMenuBody(menuBody);
         }
 
         public void ShowSingleEvent()
