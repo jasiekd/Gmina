@@ -25,7 +25,7 @@ namespace Gmina_Api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserApplicationEntity>>> GetUsersApplications()
         {
-            return await _context.UsersApplications.ToListAsync();
+            return await _context.UsersApplications.Include(x=>x.Application).ToListAsync();
         }
 
         // GET: api/UserApplication/5
@@ -121,5 +121,19 @@ namespace Gmina_Api.Controllers
         }
 
 
+        // POST: api/UserApplication/ChangeStatus/2/accepted
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpGet("ChangeStatus/{id}/{status}")]
+        public async Task<ActionResult<UserApplicationEntity>> PostChangeStatusUserApplicationEntity(int id, string status)
+        {
+            UserApplicationEntity temp = await _context.UsersApplications.FindAsync(id);
+            temp.Status = status;
+            //temp.ClerkId = clerkId;
+            temp.DateModified = DateTime.Now;
+            _context.UsersApplications.Update(temp);
+            await _context.SaveChangesAsync();
+
+            return temp;
+        }
     }
 }

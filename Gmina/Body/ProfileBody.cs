@@ -35,12 +35,12 @@ namespace Gmina.Body
         public void SetUserProfileLabels()
         {
             namelbl.Text = user.Name;
-            surnamelbl.Text = "Kowalski";
-            pesellbl.Text = "";
-            placelbl.Text = "";
-            streetlbl.Text = user.Address;
-            homeNumberlbl.Text = "";
-            zipCodelbl.Text = "";
+            surnamelbl.Text = user.Surname;
+            pesellbl.Text = user.Pesel;
+            placelbl.Text = user.Town;
+            streetlbl.Text = user.Street;
+            homeNumberlbl.Text = user.HouseNumber;
+            zipCodelbl.Text = user.ZipCode;
             phoneNumberlbl.Text = user.PhoneNumber;
             emailaddreslbl.Text = user.Email;
             birthdatelbl.Text = user.BirthDate.ToString();

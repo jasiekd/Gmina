@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Gmina_Api.Entity;
+using GminaApi.Entity;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,7 +17,7 @@ namespace Gmina.Body
 {
     public partial class ClerkApplications : UserControl
     {
-        List<Body.UserApplication> data;
+        List<UserApplicationEntity> data;
         public ClerkApplications()
         {
             InitializeComponent();
@@ -23,10 +27,9 @@ namespace Gmina.Body
         {
             data = LoadData();
             ApplicationsList.Rows.Clear();
-            foreach (Body.UserApplication item in data)
+            foreach (var item in data)
             {
-
-                ApplicationsList.Rows.Add(item.applicationID, item.applicationType, item.datedOfApplication.ToString(), item.applicationStatus);
+                ApplicationsList.Rows.Add(item.ID, item.Application.Name, item.DatePosted.ToString(), item.Status);
             }
             foreach (DataGridViewRow row in ApplicationsList.Rows)
             {
@@ -34,34 +37,25 @@ namespace Gmina.Body
                 row.DefaultCellStyle.ForeColor = Color.FromArgb(246, 246, 246);
             }
         }
-        private List<Body.UserApplication> LoadData()
+        private List<UserApplicationEntity> LoadData()
         {
             // pobranie danych o wnioskach z serwera
 
-            List<String> tmpNazwa = new List<String>() { "t1", "t2", "t3", "t4", "t5", "t6", "t7", "t8", "t9", "t10" };
-            List<String> tmpValue = new List<String>() { "e1", "e2", "e3", "e4", "e5", "e6", "e7", "e8", "e9", "e10" };
+            string str = @"http://localhost:5066/api/UserApplication";
 
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(str);
+            request.Method = "GET";
+            request.Accept = "application/json";
 
-            var list = new List<Body.UserApplication>();
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa,tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue,  ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa,tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
-            list.Add(new Body.UserApplication(tmpNazwa, tmpValue, ApplicationType.Plus500, DateTime.Now, ApplicationStatus.Submitted, 1, 1));
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            {
+                string json = new StreamReader(response.GetResponseStream()).ReadToEnd();
 
+                List<UserApplicationEntity> list2 = JsonConvert.DeserializeObject<List<UserApplicationEntity>>(json);
 
-            return list;
+                return list2;
+            }
+            return null;
         }
         private void ApplicationsList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -71,7 +65,7 @@ namespace Gmina.Body
                 ApplicationInfo info = new ApplicationInfo();
                 foreach(var i in data )
                 {
-                    if(i.applicationID == (int)ApplicationsList.Rows[e.RowIndex].Cells[0].Value)
+                    if(i.ID == (int)ApplicationsList.Rows[e.RowIndex].Cells[0].Value)
                     {
                         ApplicationInfo.Application = i;
                         info.setClerkApplicationView(this);

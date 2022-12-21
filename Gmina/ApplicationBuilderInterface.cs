@@ -11,7 +11,7 @@ namespace Gmina
     }
     enum ApplicationStatus
     {
-        Submitted,Accepted,Rejected,Improvement,Canceled,Non
+        Submitted,Accepted,Rejected,Improvement,Cancelled,Non
     }
     internal interface ApplicationBuilderInterface
     {
