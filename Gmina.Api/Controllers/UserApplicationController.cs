@@ -124,7 +124,7 @@ namespace Gmina_Api.Controllers
         // POST: api/UserApplication/ChangeStatus/2/accepted
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpGet("ChangeStatus/{id}/{status}")]
-        public async Task<ActionResult<UserApplicationEntity>> PostChangeStatusUserApplicationEntity(int id, string status)
+        public async Task<ActionResult<UserApplicationEntity>> GetChangeStatusUserApplicationEntity(int id, string status)
         {
             UserApplicationEntity temp = await _context.UsersApplications.FindAsync(id);
             temp.Status = status;
@@ -135,5 +135,14 @@ namespace Gmina_Api.Controllers
 
             return temp;
         }
+
+        // POST: api/UserApplication/ChangeStatus/2/accepted
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpGet("GetForUser/{id}")]
+        public async Task<ActionResult<IEnumerable<UserApplicationEntity>>> GetUserApplicationForUserEntity(int id)
+        {
+            return await _context.UsersApplications.Include(x=>x.Application).Where(x=>x.UserId==id).ToListAsync();
+        }
+
     }
 }

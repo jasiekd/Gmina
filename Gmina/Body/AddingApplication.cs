@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Gmina_Api.Entity;
+using Microsoft.VisualBasic.ApplicationServices;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,12 +21,12 @@ namespace Gmina.Body
         public Wnioski()
         {
             InitializeComponent();
-            List<Body.UserApplication> data = LoadData();
+            List<UserApplicationEntity> data = LoadData();
             ApplicationsList.Rows.Clear();
-            foreach (Body.UserApplication item in data)
+            foreach (UserApplicationEntity item in data)
             {
           
-                ApplicationsList.Rows.Add(item.applicationID, item.applicationType, item.datedOfApplication.ToString(), item.applicationStatus);
+                ApplicationsList.Rows.Add(item.ID, item.Application.Name, item.DatePosted.ToString(), item.Status);
             }
             foreach (DataGridViewRow row in ApplicationsList.Rows)
             {
@@ -37,17 +41,23 @@ namespace Gmina.Body
 
         }
 
-        private List<Body.UserApplication> LoadData()
+        private List<UserApplicationEntity> LoadData()
         {
-            // pobranie danych o wnioskach z serwera
-            var list = new List<Body.UserApplication>();
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500,DateTime.Now,ApplicationStatus.Submitted,1,1));
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500,DateTime.Now,ApplicationStatus.Submitted,1,1));
-            list.Add(new Body.UserApplication(new List<String>(), new List<String>(), ApplicationType.Plus500,DateTime.Now,ApplicationStatus.Submitted,1,1));
+            string str = @"http://localhost:5066/api/UserApplication/GetForUser/" + 1;
 
-            
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(str);
+            request.Method = "GET";
+            request.Accept = "application/json";
 
-            return list;
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            {
+                string json = new StreamReader(response.GetResponseStream()).ReadToEnd();
+
+                List<UserApplicationEntity> list2 = JsonConvert.DeserializeObject<List<UserApplicationEntity>>(json);
+
+                return list2;
+            }
+            return null;
         }
 
         private void ApplicationList_CellContentClick(object sender, DataGridViewCellEventArgs e)
