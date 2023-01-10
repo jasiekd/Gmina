@@ -58,16 +58,17 @@ namespace Gmina
                     if(user.RoleId == 2)
                     {
                         this.Hide();
-                        HomePage.user = user;
+                        HomePage.setUser(user);
                         HomePage homePage = new HomePage();
-    
+                        
                         homePage.Show();
                     }
                     else
                     {
                         this.Hide();
-                        ClerkPage clerkPage = new ClerkPage();
                         ClerkPage.setUser(user);
+                        ClerkPage clerkPage = new ClerkPage();
+                        
                         clerkPage.Show();
                     }
 
@@ -78,11 +79,11 @@ namespace Gmina
                 int status = (int)(ex.Response as HttpWebResponse)?.StatusCode;
                 if (status == 404)
                 {
-                    //alert not found
+                    DialogResult result = MessageBox.Show("Niepoprawne dane lodowania", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (status == 500)
                 {
-                    //alert blad serwera
+                    DialogResult result = MessageBox.Show("Nastąpoł nieoczekiwany błąd serwera", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }            
         }     

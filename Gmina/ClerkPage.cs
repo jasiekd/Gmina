@@ -14,8 +14,11 @@ namespace Gmina
     {
         public ClerkPage()
         {
+            
             InitializeComponent();
             profileBody1.setUser(currentUser);
+            profileBody1.setUser(ClerkPage.currentUser);
+            profileBody1.SetUserProfileLabels();
             //profileBody1.SetUserProfileLabels();
         }
 

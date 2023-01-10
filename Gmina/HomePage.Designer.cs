@@ -35,7 +35,14 @@ namespace Gmina
             }
             base.Dispose(disposing);
         }
-
+        static public void setUser(UserEntity user)
+        {
+            currentUser = user;
+        }
+        static public UserEntity getUser()
+        {
+            return currentUser;
+        }
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -517,7 +524,7 @@ namespace Gmina
         private CoalApplication coalApplication1;
         private Plus500Application plus500Application1;
         private ProfileBody profileBody1;
-        public static UserEntity user;
+        private static UserEntity currentUser;
         private ButtonRounded logOut;
         private Wnioski wnioski1;
         private ApplicationSelection applicationSelection2;

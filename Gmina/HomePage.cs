@@ -25,10 +25,10 @@ namespace Gmina
             applicationSelection1.setPlus500Application(plus500Application1);
             coalApplication1.setMenuBody(menuBody);
             plus500Application1.setMenuBody(menuBody);
-            profileBody1.setUser(user);
+            profileBody1.setUser(currentUser);
             profileBody1.SetUserProfileLabels();
         }
-
+        
         public void ShowSingleEvent()
         {
             singleEvent2 = new SingleEvent();
@@ -158,7 +158,7 @@ namespace Gmina
         private void logOut_Click(object sender, EventArgs e)
         {
             Form1 newLogin = new Form1();
-            user = null;
+            currentUser = null;
             DialogResult result = MessageBox.Show("Czy napewno wylogować z systemu?", "Wylogowanie", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {

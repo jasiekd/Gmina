@@ -30,17 +30,21 @@ namespace Gmina.Body
         }
         public void SetUserProfileLabels()
         {
-            namelbl.Text = user.Name;
-            surnamelbl.Text = user.Surname;
-            pesellbl.Text = user.Pesel;
-            placelbl.Text = user.Town;
-            streetlbl.Text = user.Street;
-            homeNumberlbl.Text = user.HouseNumber;
-            zipCodelbl.Text = user.ZipCode;
-            phoneNumberlbl.Text = user.PhoneNumber;
-            emailaddreslbl.Text = user.Email;
-            birthdatelbl.Text = user.BirthDate.ToString();
-            dateAddedlbl.Text = user.DateAdded.ToString();
+            if(user!=null)
+            {
+                namelbl.Text = user.Name;
+                surnamelbl.Text = user.Surname;
+                pesellbl.Text = user.Pesel;
+                placelbl.Text = user.Town;
+                streetlbl.Text = user.Street;
+                homeNumberlbl.Text = user.HouseNumber;
+                zipCodelbl.Text = user.ZipCode;
+                phoneNumberlbl.Text = user.PhoneNumber;
+                emailaddreslbl.Text = user.Email;
+                birthdatelbl.Text = user.BirthDate.ToString();
+                dateAddedlbl.Text = user.DateAdded.ToString();
+            }
+            
         }
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {

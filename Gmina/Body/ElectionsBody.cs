@@ -23,13 +23,13 @@ namespace Gmina.Body
         private void ElectionsBody_Load(object sender, EventArgs e)
         {
             List<wiersz> wiersze = new List<wiersz>();
-            wiersze.Add(new wiersz() {ID=1,Name= "Wybory na burmistrza" });  
-            wiersze.Add(new wiersz() {ID=2,Name= "Wybory na aa" });  
-            wiersze.Add(new wiersz() {ID=3,Name="tak"});  
+            wiersze.Add(new wiersz() {ID=1,Name= "Wybory na burmistrza", EndDate = "10.01.2023" });  
+            wiersze.Add(new wiersz() {ID=2,Name= "Wybory na aa", EndDate = "10.01.2023" });  
+            wiersze.Add(new wiersz() {ID=3,Name="tak", EndDate = "10.01.2023" });  
             CandidatesList.Rows.Clear();
-            CandidatesList.Rows.Add(wiersze[0].ID, wiersze[0].Name);
-            CandidatesList.Rows.Add(wiersze[1].ID, wiersze[1].Name);
-            CandidatesList.Rows.Add(wiersze[2].ID, wiersze[2].Name);
+            CandidatesList.Rows.Add(wiersze[0].ID, wiersze[0].Name, wiersze[0].EndDate);
+            CandidatesList.Rows.Add(wiersze[1].ID, wiersze[1].Name, wiersze[0].EndDate);
+            CandidatesList.Rows.Add(wiersze[2].ID, wiersze[2].Name, wiersze[0].EndDate);
         }
 
         private void CandidatesList_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -69,6 +69,7 @@ namespace Gmina.Body
         public int ID { get; set; }
 
         public string Name { get; set; }
+        public string EndDate { get; set; }
     }
    
 }
