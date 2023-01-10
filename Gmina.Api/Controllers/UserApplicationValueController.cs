@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using GminaApi.Data;
-using Gmina_Api.Entity;
 
 namespace Gmina_Api.Controllers
 {

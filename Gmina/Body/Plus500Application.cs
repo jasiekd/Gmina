@@ -1,5 +1,4 @@
-﻿using Gmina_Api.Entity;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
@@ -56,15 +55,20 @@ namespace Gmina.Body
                     .addApplicationElement("numer konta", accountNymber.Text)
                     .getResult();
 
-                //userapplicationentity dodanie
+                
                 string url = @"http://localhost:5066/api/UserApplication/";
-
+                ApplicationEntity test = new ApplicationEntity { 
+                    ID = 0,
+                    Name = "Test",
+                    Description = "Test",
+                };
                 UserApplicationEntity userApplication = new UserApplicationEntity
                 {
                     ID = 0,
                     UserId = newApplication.userID,
                     ApplicationId = newApplication.applicationID,
                     DatePosted = newApplication.datedOfApplication,
+                    Application = test, 
                     ClerkId = 0,
                     Status = newApplication.applicationStatus.ToString(),
                     DateModified = newApplication.datedOfApplication,

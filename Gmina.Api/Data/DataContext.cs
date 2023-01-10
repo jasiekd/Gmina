@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using GminaApi.Entity;
-using Gmina_Api.Entity;
 
 namespace GminaApi.Data
 {
@@ -14,6 +13,7 @@ namespace GminaApi.Data
         public DbSet<ParameterApplicationEntity> ParametersApplication { get; set; }
         public DbSet<UserApplicationEntity> UsersApplications { get; set; }
         public DbSet<UserApplicationValueEntity> UserApplicationValues { get; set; }
+        public DbSet<EventEntity> EventEntity { get; set; }
         
     }
 }

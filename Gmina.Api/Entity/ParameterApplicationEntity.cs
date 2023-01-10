@@ -1,7 +1,5 @@
 ﻿using GminaApi.Entity;
 
-namespace Gmina_Api.Entity
-{
     public class ParameterApplicationEntity : IEntity
     {
         public int ID { get; set; }
@@ -9,4 +7,4 @@ namespace Gmina_Api.Entity
         public string Type { get; set; }
         public int ApplicationId { get; set; }
     }
-}
+

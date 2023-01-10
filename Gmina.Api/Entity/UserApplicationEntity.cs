@@ -1,7 +1,6 @@
 ﻿using GminaApi.Entity;
 
-namespace Gmina_Api.Entity
-{
+
     public class UserApplicationEntity : IEntity
     {
         public int ID { get; set; }
@@ -14,4 +13,4 @@ namespace Gmina_Api.Entity
         public DateTime DateModified { get; set; }
         public string Description { get; set; }
     }
-}
+

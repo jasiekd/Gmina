@@ -1,5 +1,4 @@
-﻿using Gmina_Api.Entity;
-using Microsoft.VisualBasic.ApplicationServices;
+﻿using Microsoft.VisualBasic.ApplicationServices;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

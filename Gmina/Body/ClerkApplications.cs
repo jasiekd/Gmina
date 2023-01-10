@@ -1,5 +1,4 @@
-﻿using Gmina_Api.Entity;
-using GminaApi.Entity;
+﻿using GminaApi.Entity;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

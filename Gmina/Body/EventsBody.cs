@@ -1,10 +1,12 @@
 ﻿using Gmina.Properties;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,22 +38,31 @@ namespace Gmina.Body
         }
         public void populateItems()
         {
-            int n = 50;
-            ListItem[] listItems = new ListItem[n];
-            for (int i = 0; i < listItems.Length; i++)
+            string str = @"http://localhost:5066/api/Event";
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(str);
+            request.Method = "GET";
+            request.Accept = "application/json";
+
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             {
-                listItems[i] = new ListItem();
-                listItems[i].Picture = Resources.image;
-                listItems[i].Title = "takkkkkkkkkkk"+i;
-                listItems[i].Description = "nieeeeeeeeeeeee";
-                
-                if (flowLayoutPanel.Controls.Count < 0)
-                    flowLayoutPanel.Controls.Clear();
-                else
-                    flowLayoutPanel.Controls.Add(listItems[i]);
-    
-            }
-            
+                string json = new StreamReader(response.GetResponseStream()).ReadToEnd();
+
+                List<EventEntity> list2 = JsonConvert.DeserializeObject<List<EventEntity>>(json);
+
+                ListItem[] listItems = new ListItem[list2.Count];
+                for (int i=0; i < listItems.Length; i++)
+                {
+                    listItems[i] = new ListItem();
+                    listItems[i].Picture = Resources.image;
+                    listItems[i].Title = list2.ElementAt(i).Title;
+                    listItems[i].Description = list2.ElementAt(i).ShortDescription;
+
+                    if (flowLayoutPanel.Controls.Count < 0)
+                        flowLayoutPanel.Controls.Clear();
+                    else
+                        flowLayoutPanel.Controls.Add(listItems[i]);
+                }
+            } 
         }
         private void flowLayoutPanel_Paint(object sender, PaintEventArgs e)
         {
