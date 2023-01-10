@@ -38,14 +38,50 @@ namespace Gmina
 
         private void ApplicationsButton_Click(object sender, EventArgs e)
         {
-            clerkApplications4.Show();
-            clerkApplications4.BringToFront();
+            clerkApplications5.Show();
+            clerkApplications5.BringToFront();
         }
 
         private void EvenetButton_Click(object sender, EventArgs e)
         {
             clerkAddEvent1.Show();
             clerkAddEvent1.BringToFront();
+        }
+
+        private void addUserBody1_Load(object sender, EventArgs e)
+        {
+            addUserBody1.Hide();
+        }
+
+        private void AddUserButton_Click(object sender, EventArgs e)
+        {
+            addUserBody1.Show();
+            addUserBody1.BringToFront();    
+        }
+
+        private void MenuButton_Click(object sender, EventArgs e)
+        {
+            menuBody1.Show();
+            menuBody1.BringToFront();
+        }
+
+       
+
+        private void menuBody1_Load(object sender, EventArgs e)
+        {
+            menuBody1.Hide();
+        }
+
+        private void profileBody1_Load(object sender, EventArgs e)
+        {
+            profileBody1.Hide();
+            
+        }
+
+        private void profile2_Click_1(object sender, EventArgs e)
+        {
+            profileBody1.Show();
+            profileBody1.BringToFront();
         }
     }
 }
