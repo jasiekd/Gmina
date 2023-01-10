@@ -41,5 +41,16 @@ namespace Gmina.Body
         {
 
         }
+
+        private void AddEventButton_Click(object sender, EventArgs e)
+        {
+            string title = EventTitleText.Text;
+            string sDesc = EventShortDescription.Text;
+            string desc = EventDescription.Text;
+            Bitmap image = new Bitmap(EventImage.Image);
+            //Image image = EventImage.Image;
+
+            // To do: dodawanie wydarzenia na serwer
+        }
     }
 }

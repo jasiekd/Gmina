@@ -49,6 +49,20 @@ namespace Gmina.Body
                    
             }
         }
+
+        private void CitizenVotesButton_Click(object sender, EventArgs e)
+        {
+            CandidatesList.Rows.Clear();
+            //To do: ładowanie listy głosowań obywatelskich z bazy (bazując na tym jak to działa w funkcji ElectionsBody_Load )
+
+
+        }
+
+        private void OfficialVoteButton_Click(object sender, EventArgs e)
+        {
+            CandidatesList.Rows.Clear();
+            //To do: ładowanie listy głosowań urzędowych z bazy (bazując na tym jak to działa w funkcji ElectionsBody_Load )
+        }
     }
     public class wiersz
     {

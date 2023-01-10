@@ -56,7 +56,6 @@ namespace Gmina
             this.profile2 = new Gmina.ButtonRounded();
             this.settings2 = new Gmina.ButtonRounded();
             this.clerkAddEvent1 = new Gmina.Body.ClerkAddEvent();
-            this.clerkApplications4 = new Gmina.Body.ClerkApplications();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -208,7 +207,7 @@ namespace Gmina
             this.ElectionsButton.Name = "ElectionsButton";
             this.ElectionsButton.Size = new System.Drawing.Size(219, 75);
             this.ElectionsButton.TabIndex = 17;
-            this.ElectionsButton.Text = "Organizacja Wyborów";
+            this.ElectionsButton.Text = "Organizacja Głosowań";
             this.ElectionsButton.UseVisualStyleBackColor = false;
             // 
             // panel4
@@ -312,21 +311,12 @@ namespace Gmina
             this.clerkAddEvent1.Size = new System.Drawing.Size(788, 661);
             this.clerkAddEvent1.TabIndex = 21;
             // 
-            // clerkApplications4
-            // 
-            this.clerkApplications4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
-            this.clerkApplications4.Location = new System.Drawing.Point(373, 135);
-            this.clerkApplications4.Name = "clerkApplications4";
-            this.clerkApplications4.Size = new System.Drawing.Size(788, 661);
-            this.clerkApplications4.TabIndex = 22;
-            // 
             // ClerkPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(90)))));
             this.ClientSize = new System.Drawing.Size(1211, 863);
-            this.Controls.Add(this.clerkApplications4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);

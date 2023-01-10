@@ -20,6 +20,8 @@ namespace Gmina.Body
 
         private void ElectionPage_Load(object sender, EventArgs e)
         {
+            this.panel1.Controls.Add(new ButtonRounded());
+            
             CandidatesList.Rows.Clear();
             CandidatesList.Rows.Add(1, "t", "t", DateTime.Now);
             CandidatesList.Rows.Add(1, "a", "a", DateTime.Now);
@@ -47,5 +49,7 @@ namespace Gmina.Body
                 row.Cells[3].Value = "Wyłączony";
             }
         }
+
+
     }
 }

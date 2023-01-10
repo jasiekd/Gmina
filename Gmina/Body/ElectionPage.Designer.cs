@@ -35,7 +35,9 @@
             this.inhabitantBirthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vote = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.CandidatesList)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // CandidatesList
@@ -52,16 +54,15 @@
             this.inhabitantSurname,
             this.inhabitantBirthday,
             this.vote});
-            this.CandidatesList.Location = new System.Drawing.Point(2, 92);
-            this.CandidatesList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.CandidatesList.MinimumSize = new System.Drawing.Size(901, 600);
+            this.CandidatesList.Location = new System.Drawing.Point(3, 3);
+            this.CandidatesList.MinimumSize = new System.Drawing.Size(788, 450);
             this.CandidatesList.Name = "CandidatesList";
             this.CandidatesList.ReadOnly = true;
             this.CandidatesList.RowHeadersVisible = false;
             this.CandidatesList.RowHeadersWidth = 51;
             this.CandidatesList.RowTemplate.Height = 25;
             this.CandidatesList.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.CandidatesList.Size = new System.Drawing.Size(976, 600);
+            this.CandidatesList.Size = new System.Drawing.Size(835, 450);
             this.CandidatesList.TabIndex = 7;
             this.CandidatesList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CandidatesList_CellContentClick);
             // 
@@ -113,31 +114,42 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(412, 19);
+            this.label1.Location = new System.Drawing.Point(360, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 46);
+            this.label1.Size = new System.Drawing.Size(191, 37);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Wybory";
+            this.label1.Text = "Głosowania";
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.CandidatesList);
+            this.panel1.Location = new System.Drawing.Point(0, 105);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(860, 413);
+            this.panel1.TabIndex = 9;
             // 
             // ElectionPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(982, 691);
+            this.ClientSize = new System.Drawing.Size(859, 518);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.CandidatesList);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ElectionPage";
             this.Text = "ElectionPage";
             this.Load += new System.EventHandler(this.ElectionPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CandidatesList)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
+        private List<ButtonRounded> optionButtonList;
         private DataGridView CandidatesList;
         private DataGridViewTextBoxColumn inhabitantID;
         private DataGridViewTextBoxColumn inhabitantName;
@@ -145,5 +157,6 @@
         private DataGridViewTextBoxColumn inhabitantBirthday;
         private DataGridViewButtonColumn vote;
         private Label label1;
+        private Panel panel1;
     }
 }

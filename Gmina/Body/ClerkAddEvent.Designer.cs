@@ -30,18 +30,18 @@
         {
             this.AddEventLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.EventTitleText = new System.Windows.Forms.TextBox();
             this.EventTitleLabel = new System.Windows.Forms.Label();
-            this.EventDescriptionLabel = new System.Windows.Forms.Label();
             this.EventDescription = new System.Windows.Forms.TextBox();
+            this.EventDescriptionLabel = new System.Windows.Forms.Label();
+            this.EventShortDescriptionLabel = new System.Windows.Forms.Label();
+            this.EventShortDescription = new System.Windows.Forms.TextBox();
             this.EventImageLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.EventImage = new System.Windows.Forms.PictureBox();
             this.EventImageButton = new Gmina.ButtonRounded();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.EventShortDescriptionLabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.EventImage = new System.Windows.Forms.PictureBox();
             this.AddEventButton = new Gmina.ButtonRounded();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EventImage)).BeginInit();
@@ -65,12 +65,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.53646F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.46354F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 117F));
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.EventTitleText, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.EventTitleLabel, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.EventDescription, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.EventDescriptionLabel, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.EventShortDescriptionLabel, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.EventShortDescription, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.EventImageLabel, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.AddEventButton, 1, 8);
@@ -89,12 +89,12 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(768, 780);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
-            // textBox1
+            // EventTitleText
             // 
-            this.textBox1.Location = new System.Drawing.Point(110, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(537, 23);
-            this.textBox1.TabIndex = 0;
+            this.EventTitleText.Location = new System.Drawing.Point(110, 23);
+            this.EventTitleText.Name = "EventTitleText";
+            this.EventTitleText.Size = new System.Drawing.Size(537, 23);
+            this.EventTitleText.TabIndex = 0;
             // 
             // EventTitleLabel
             // 
@@ -107,6 +107,14 @@
             this.EventTitleLabel.TabIndex = 1;
             this.EventTitleLabel.Text = "Tytuł wydarzenia";
             // 
+            // EventDescription
+            // 
+            this.EventDescription.Location = new System.Drawing.Point(110, 179);
+            this.EventDescription.Multiline = true;
+            this.EventDescription.Name = "EventDescription";
+            this.EventDescription.Size = new System.Drawing.Size(537, 285);
+            this.EventDescription.TabIndex = 3;
+            // 
             // EventDescriptionLabel
             // 
             this.EventDescriptionLabel.AutoSize = true;
@@ -118,13 +126,25 @@
             this.EventDescriptionLabel.TabIndex = 2;
             this.EventDescriptionLabel.Text = "Treść wydarzenia";
             // 
-            // EventDescription
+            // EventShortDescriptionLabel
             // 
-            this.EventDescription.Location = new System.Drawing.Point(110, 179);
-            this.EventDescription.Multiline = true;
-            this.EventDescription.Name = "EventDescription";
-            this.EventDescription.Size = new System.Drawing.Size(537, 285);
-            this.EventDescription.TabIndex = 3;
+            this.EventShortDescriptionLabel.AutoSize = true;
+            this.EventShortDescriptionLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EventShortDescriptionLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.EventShortDescriptionLabel.Location = new System.Drawing.Point(110, 50);
+            this.EventShortDescriptionLabel.Name = "EventShortDescriptionLabel";
+            this.EventShortDescriptionLabel.Size = new System.Drawing.Size(67, 15);
+            this.EventShortDescriptionLabel.TabIndex = 6;
+            this.EventShortDescriptionLabel.Text = "Krótki opis";
+            this.EventShortDescriptionLabel.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // EventShortDescription
+            // 
+            this.EventShortDescription.Location = new System.Drawing.Point(110, 73);
+            this.EventShortDescription.Multiline = true;
+            this.EventShortDescription.Name = "EventShortDescription";
+            this.EventShortDescription.Size = new System.Drawing.Size(537, 81);
+            this.EventShortDescription.TabIndex = 7;
             // 
             // EventImageLabel
             // 
@@ -151,15 +171,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(537, 195);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
-            // EventImage
-            // 
-            this.EventImage.Location = new System.Drawing.Point(3, 3);
-            this.EventImage.Name = "EventImage";
-            this.EventImage.Size = new System.Drawing.Size(262, 189);
-            this.EventImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.EventImage.TabIndex = 0;
-            this.EventImage.TabStop = false;
-            // 
             // EventImageButton
             // 
             this.EventImageButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(148)))));
@@ -175,34 +186,14 @@
             this.EventImageButton.UseVisualStyleBackColor = false;
             this.EventImageButton.Click += new System.EventHandler(this.EventImageButton_Click);
             // 
-            // panel1
+            // EventImage
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.tableLayoutPanel1);
-            this.panel1.Location = new System.Drawing.Point(0, 72);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(788, 586);
-            this.panel1.TabIndex = 10;
-            // 
-            // EventShortDescriptionLabel
-            // 
-            this.EventShortDescriptionLabel.AutoSize = true;
-            this.EventShortDescriptionLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.EventShortDescriptionLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.EventShortDescriptionLabel.Location = new System.Drawing.Point(110, 50);
-            this.EventShortDescriptionLabel.Name = "EventShortDescriptionLabel";
-            this.EventShortDescriptionLabel.Size = new System.Drawing.Size(67, 15);
-            this.EventShortDescriptionLabel.TabIndex = 6;
-            this.EventShortDescriptionLabel.Text = "Krótki opis";
-            this.EventShortDescriptionLabel.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(110, 73);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(537, 81);
-            this.textBox2.TabIndex = 7;
+            this.EventImage.Location = new System.Drawing.Point(3, 3);
+            this.EventImage.Name = "EventImage";
+            this.EventImage.Size = new System.Drawing.Size(262, 189);
+            this.EventImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.EventImage.TabIndex = 0;
+            this.EventImage.TabStop = false;
             // 
             // AddEventButton
             // 
@@ -217,6 +208,16 @@
             this.AddEventButton.TabIndex = 8;
             this.AddEventButton.Text = "Dodaj wydarzenie";
             this.AddEventButton.UseVisualStyleBackColor = false;
+            this.AddEventButton.Click += new System.EventHandler(this.AddEventButton_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.tableLayoutPanel1);
+            this.panel1.Location = new System.Drawing.Point(0, 72);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(788, 586);
+            this.panel1.TabIndex = 10;
             // 
             // ClerkAddEvent
             // 
@@ -241,7 +242,7 @@
 
         private Label AddEventLabel;
         private TableLayoutPanel tableLayoutPanel1;
-        private TextBox textBox1;
+        private TextBox EventTitleText;
         private Label EventTitleLabel;
         private Label EventDescriptionLabel;
         private TextBox EventDescription;
@@ -251,7 +252,7 @@
         private ButtonRounded EventImageButton;
         private Panel panel1;
         private Label EventShortDescriptionLabel;
-        private TextBox textBox2;
+        private TextBox EventShortDescription;
         private ButtonRounded AddEventButton;
     }
 }
