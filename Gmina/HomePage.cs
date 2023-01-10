@@ -20,7 +20,7 @@ namespace Gmina
             InitializeComponent();
             menuBody.Show();
             menuBody.BringToFront();
-            wnioski1.setSelectionScreen(applicationSelection1);
+            wnioski2.setSelectionScreen(applicationSelection1);
             applicationSelection1.setCoalApplication(coalApplication1);
             applicationSelection1.setPlus500Application(plus500Application1);
             coalApplication1.setMenuBody(menuBody);
@@ -90,11 +90,6 @@ namespace Gmina
 
 
 
-        private void TaxesButton_Click(object sender, EventArgs e)
-        {
-            taxesBody.Show();
-            taxesBody.BringToFront();
-        }
 
         private void ElectionsButton_Click(object sender, EventArgs e)
         {
@@ -104,14 +99,14 @@ namespace Gmina
 
         private void ApplicationsButton_Click(object sender, EventArgs e)
         {
-            wnioski1.Show();
-            wnioski1.BringToFront();
+            wnioski2.Show();
+            wnioski2.BringToFront();
         }
 
         private void EvenetButton_Click(object sender, EventArgs e)
         {
-            eventsBody1.Show();
-            eventsBody1.BringToFront();
+            eventsBody2.Show();
+            eventsBody2.BringToFront();
         }
 
         private void SupportContactButton_Click(object sender, EventArgs e)
@@ -125,11 +120,7 @@ namespace Gmina
 
         }
 
-        private void aboutButtonAction(object sender, EventArgs e)
-        {
-           // aboutCity1.Show();
-           // aboutCity1.BringToFront();
-        }
+    
 
         private void profileButtonAction(object sender, EventArgs e)
         {
@@ -147,10 +138,7 @@ namespace Gmina
 
         }
 
-        private void eventsBody1_Load_1(object sender, EventArgs e)
-        {
-            eventsBody1.Hide();
-        }
+     
 
         private void singleEvent2_Load(object sender, EventArgs e)
         {
@@ -179,6 +167,11 @@ namespace Gmina
             }
 
 
+        }
+
+        private void eventsBody2_Load(object sender, EventArgs e)
+        {
+            eventsBody2.Hide();
         }
     }
 }
