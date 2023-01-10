@@ -38,7 +38,7 @@ namespace Gmina.Body
         }
         public void populateItems()
         {
-            string str = @"http://localhost:5066/api/Event";
+            string str = @"http://localhost:5066/api/Event/ByDate";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(str);
             request.Method = "GET";
             request.Accept = "application/json";

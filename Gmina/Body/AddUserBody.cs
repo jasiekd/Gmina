@@ -1,12 +1,16 @@
-﻿using System;
+﻿using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GminaApi.Entity;
 
 namespace Gmina.Body
 {
@@ -32,39 +36,62 @@ namespace Gmina.Body
         }
         private void AddUser_Click(object sender, EventArgs e)
         {
-            /* Sposob pobierania danych z formulaza
-            string tmp;
-            tmp = NameTextBox.Text;
-            tmp = SurnameTextBox.Text;
-            tmp = BirthdateTextBox.Text;
-            tmp = EmailTextBox.Text;
-            tmp = LoginTextBox.Text;
-            tmp = PasswordTextBox.Text;
-            tmp = PhoneNumberTextBox.Text;
-            tmp = HouseNumberTextBox.Text;
-            tmp = StreetTextBox.Text;
-            tmp = ZipCodeTextBox.Text;
-            tmp = PESELTextBox.Text;
-            */
-
-            // To do: doanie usera do bazy
-            if (true)//jeżeli uda się dodać użytkownika
+            string url = @"http://localhost:5066/api/User";
+            UserEntity tempUser = new UserEntity
             {
-                DialogResult result = MessageBox.Show("Użytkownik dodany poprawnie", "Dodawanie użytkownika", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (result == DialogResult.OK)
+                ID = 0,
+                Name = NameTextBox.Text,
+                Surname = SurnameTextBox.Text,
+                BirthDate = DateTime.Parse(BirthdateTextBox.Text),
+                Email = EmailTextBox.Text,
+                Login = LoginTextBox.Text,
+                Password = PasswordTextBox.Text,
+                PhoneNumber = PhoneNumberTextBox.Text,
+                HouseNumber = HouseNumberTextBox.Text,
+                Street = StreetTextBox.Text,
+                ZipCode = ZipCodeTextBox.Text,
+                Pesel = PESELTextBox.Text,
+                Town = "Kielce",
+                RoleId = 2,
+        };
+
+            try
+            { 
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.Method = "POST";
+                request.ContentType = "application/json";
+
+                string postData = JsonConvert.SerializeObject(tempUser, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+                byte[] data = Encoding.UTF8.GetBytes(postData);
+                request.ContentLength = data.Length;
+
+                using (Stream stream = request.GetRequestStream())
                 {
-                    clearForm();
+                    stream.Write(data, 0, data.Length);
                 }
+
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                using (StreamReader reader = new StreamReader(response.GetResponseStream())) ;
+                DialogResult result = MessageBox.Show("Użytkownik dodany poprawnie", "Dodawanie użytkownika", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clearForm();
             }
-            else
+            catch (WebException ex)
             {
                 DialogResult result = MessageBox.Show("Problem z dodanie użytkownika", "Dodawanie użytkownika", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (result == DialogResult.OK)
+                int status = (int)(ex.Response as HttpWebResponse)?.StatusCode;
+                if (status == 404)
                 {
-                    
+                    //alert not found
+                }
+                else if (status == 500)
+                {
+                    //alert blad serwera
+                }
+                else if (status == 400)
+                {
+                    // alert bad request
                 }
             }
-            
         }
     }
 }

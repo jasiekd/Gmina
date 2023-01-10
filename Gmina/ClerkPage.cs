@@ -15,6 +15,8 @@ namespace Gmina
         public ClerkPage()
         {
             InitializeComponent();
+            profileBody1.setUser(currentUser);
+            //profileBody1.SetUserProfileLabels();
         }
 
         private void ClerkPage_Load(object sender, EventArgs e)
@@ -74,12 +76,14 @@ namespace Gmina
 
         private void profileBody1_Load(object sender, EventArgs e)
         {
+            
             profileBody1.Hide();
             
         }
 
         private void profile2_Click_1(object sender, EventArgs e)
         {
+            
             profileBody1.Show();
             profileBody1.BringToFront();
         }

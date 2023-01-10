@@ -27,10 +27,6 @@ namespace Gmina.Body
         {
 
             InitializeComponent();
-
-
-
-           
         }
         public void SetUserProfileLabels()
         {

@@ -26,6 +26,12 @@ namespace Gmina_Api.Controllers
         {
             return await _context.EventEntity.ToListAsync();
         }
+        // GET: api/Event
+        [HttpGet("ByDate")]
+        public async Task<ActionResult<IEnumerable<EventEntity>>> SortedByDateGetEventEntity()
+        {
+            return await _context.EventEntity.OrderByDescending(x => x.DateCreated).ToListAsync();
+        }
 
         // GET: api/Event/5
         [HttpGet("{id}")]
