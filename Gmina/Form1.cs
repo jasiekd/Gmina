@@ -67,7 +67,7 @@ namespace Gmina
                     {
                         this.Hide();
                         ClerkPage clerkPage = new ClerkPage();
-                        clerkPage.setUser(user);
+                        ClerkPage.setUser(user);
                         clerkPage.Show();
                     }
 

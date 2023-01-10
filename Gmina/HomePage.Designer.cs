@@ -57,6 +57,7 @@ namespace Gmina
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
+            this.logOut = new Gmina.ButtonRounded();
             this.profile2 = new Gmina.ButtonRounded();
             this.settings2 = new Gmina.ButtonRounded();
             this.aboutCity2 = new Gmina.ButtonRounded();
@@ -75,7 +76,7 @@ namespace Gmina
             this.coalApplication1 = new Gmina.Body.CoalApplication();
             this.plus500Application1 = new Gmina.Body.Plus500Application();
             this.profileBody1 = new Gmina.Body.ProfileBody();
-            this.logOut = new Gmina.ButtonRounded();
+            this.wnioski1 = new Gmina.Body.Wnioski();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,7 +94,7 @@ namespace Gmina
             this.panel1.Controls.Add(this.ApplicationsButton);
             this.panel1.Controls.Add(this.ElectionsButton);
             this.panel1.Location = new System.Drawing.Point(70, 135);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(254, 657);
             this.panel1.TabIndex = 8;
@@ -207,7 +208,7 @@ namespace Gmina
             this.panel2.Controls.Add(this.appName);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(70, 12);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(254, 103);
             this.panel2.TabIndex = 9;
@@ -255,6 +256,23 @@ namespace Gmina
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(788, 65);
             this.panel3.TabIndex = 14;
+            // 
+            // logOut
+            // 
+            this.logOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(148)))));
+            this.logOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logOut.FlatAppearance.BorderSize = 0;
+            this.logOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.logOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.logOut.Location = new System.Drawing.Point(691, 17);
+            this.logOut.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.logOut.Name = "logOut";
+            this.logOut.Size = new System.Drawing.Size(88, 27);
+            this.logOut.TabIndex = 26;
+            this.logOut.Text = "Wyloguj";
+            this.logOut.UseVisualStyleBackColor = false;
+            this.logOut.Click += new System.EventHandler(this.logOut_Click);
             // 
             // profile2
             // 
@@ -328,7 +346,7 @@ namespace Gmina
             // 
             this.supportContactBody1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
             this.supportContactBody1.Location = new System.Drawing.Point(373, 135);
-            this.supportContactBody1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.supportContactBody1.Margin = new System.Windows.Forms.Padding(2);
             this.supportContactBody1.Name = "supportContactBody1";
             this.supportContactBody1.Size = new System.Drawing.Size(788, 657);
             this.supportContactBody1.TabIndex = 13;
@@ -347,7 +365,7 @@ namespace Gmina
             // 
             this.electionsBody1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
             this.electionsBody1.Location = new System.Drawing.Point(373, 135);
-            this.electionsBody1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.electionsBody1.Margin = new System.Windows.Forms.Padding(2);
             this.electionsBody1.Name = "electionsBody1";
             this.electionsBody1.Size = new System.Drawing.Size(788, 657);
             this.electionsBody1.TabIndex = 10;
@@ -365,7 +383,7 @@ namespace Gmina
             // 
             this.menuBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
             this.menuBody.Location = new System.Drawing.Point(373, 135);
-            this.menuBody.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuBody.Margin = new System.Windows.Forms.Padding(2);
             this.menuBody.Name = "menuBody";
             this.menuBody.Size = new System.Drawing.Size(788, 657);
             this.menuBody.TabIndex = 7;
@@ -375,7 +393,7 @@ namespace Gmina
             // 
             this.taxesBody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
             this.taxesBody.Location = new System.Drawing.Point(373, 135);
-            this.taxesBody.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.taxesBody.Margin = new System.Windows.Forms.Padding(2);
             this.taxesBody.Name = "taxesBody";
             this.taxesBody.Size = new System.Drawing.Size(788, 657);
             this.taxesBody.TabIndex = 0;
@@ -465,22 +483,13 @@ namespace Gmina
             this.profileBody1.TabIndex = 22;
             this.profileBody1.Load += new System.EventHandler(this.profileBody1_Load);
             // 
-            // logOut
+            // wnioski1
             // 
-            this.logOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(148)))));
-            this.logOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.logOut.FlatAppearance.BorderSize = 0;
-            this.logOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.logOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.logOut.Location = new System.Drawing.Point(691, 17);
-            this.logOut.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.logOut.Name = "logOut";
-            this.logOut.Size = new System.Drawing.Size(88, 27);
-            this.logOut.TabIndex = 26;
-            this.logOut.Text = "Wyloguj";
-            this.logOut.UseVisualStyleBackColor = false;
-            this.logOut.Click += new System.EventHandler(this.logOut_Click);
+            this.wnioski1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
+            this.wnioski1.Location = new System.Drawing.Point(373, 135);
+            this.wnioski1.Name = "wnioski1";
+            this.wnioski1.Size = new System.Drawing.Size(788, 656);
+            this.wnioski1.TabIndex = 23;
             // 
             // HomePage
             // 
@@ -488,23 +497,24 @@ namespace Gmina
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(90)))));
             this.ClientSize = new System.Drawing.Size(1211, 796);
-            this.Controls.Add(this.profileBody1);
-            this.Controls.Add(this.plus500Application1);
-            this.Controls.Add(this.coalApplication1);
-            this.Controls.Add(this.applicationSelection1);
+            this.Controls.Add(this.wnioski1);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.singleEvent2);
-            this.Controls.Add(this.eventsBody1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.eventsBody1);
             this.Controls.Add(this.aboutCity1);
             this.Controls.Add(this.electionsBody1);
             this.Controls.Add(this.menuBody);
             this.Controls.Add(this.taxesBody);
             this.Controls.Add(this.supportContactBody1);
+            this.Controls.Add(this.profileBody1);
+            this.Controls.Add(this.plus500Application1);
+            this.Controls.Add(this.coalApplication1);
+            this.Controls.Add(this.applicationSelection1);
+            this.Controls.Add(this.singleEvent2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "HomePage";
@@ -558,5 +568,6 @@ namespace Gmina
         private ProfileBody profileBody1;
         public static UserEntity user;
         private ButtonRounded logOut;
+        private Wnioski wnioski1;
     }
 }

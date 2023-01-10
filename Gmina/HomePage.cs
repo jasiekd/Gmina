@@ -20,7 +20,7 @@ namespace Gmina
             InitializeComponent();
             menuBody.Show();
             menuBody.BringToFront();
-            applicationsBody1.setSelectionScreen(applicationSelection1);
+            wnioski1.setSelectionScreen(applicationSelection1);
             applicationSelection1.setCoalApplication(coalApplication1);
             applicationSelection1.setPlus500Application(plus500Application1);
             coalApplication1.setMenuBody(menuBody);
@@ -104,8 +104,8 @@ namespace Gmina
 
         private void ApplicationsButton_Click(object sender, EventArgs e)
         {
-            applicationsBody1.Show();
-            applicationsBody1.BringToFront();
+            wnioski1.Show();
+            wnioski1.BringToFront();
         }
 
         private void EvenetButton_Click(object sender, EventArgs e)

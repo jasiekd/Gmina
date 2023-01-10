@@ -22,9 +22,13 @@ namespace Gmina
             base.Dispose(disposing);
         }
 
-        public void setUser(UserEntity user)
+        static public void setUser(UserEntity user)
         {
-            this.user = user;
+            currentUser = user;
+        }
+        static public UserEntity getUser()
+        {
+            return currentUser;
         }
         #region Windows Form Designer generated code
 
@@ -361,7 +365,7 @@ namespace Gmina
         private ButtonRounded profile2;
         private ButtonRounded settings2;
         private Body.ClerkApplications clerkApplications1;
-        private UserEntity user;
+        static private UserEntity currentUser;
         private ButtonRounded logOut;
         private Body.ClerkApplications clerkApplications2;
         private Body.ClerkAddEvent clerkAddEvent1;
