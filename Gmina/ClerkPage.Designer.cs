@@ -51,7 +51,8 @@ namespace Gmina
             this.logOut = new Gmina.ButtonRounded();
             this.profile2 = new Gmina.ButtonRounded();
             this.settings2 = new Gmina.ButtonRounded();
-            this.clerkApplications1 = new Gmina.Body.ClerkApplications();
+            this.clerkAddEvent1 = new Gmina.Body.ClerkAddEvent();
+            this.clerkApplications4 = new Gmina.Body.ClerkApplications();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -155,6 +156,7 @@ namespace Gmina
             this.EvenetButton.TabIndex = 19;
             this.EvenetButton.Text = "Dodawanie wydarzeń";
             this.EvenetButton.UseVisualStyleBackColor = false;
+            this.EvenetButton.Click += new System.EventHandler(this.EvenetButton_Click);
             // 
             // TaxesButton
             // 
@@ -298,13 +300,21 @@ namespace Gmina
             this.settings2.Text = "Ustawienia";
             this.settings2.UseVisualStyleBackColor = false;
             // 
-            // clerkApplications1
+            // clerkAddEvent1
             // 
-            this.clerkApplications1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
-            this.clerkApplications1.Location = new System.Drawing.Point(373, 135);
-            this.clerkApplications1.Name = "clerkApplications1";
-            this.clerkApplications1.Size = new System.Drawing.Size(788, 661);
-            this.clerkApplications1.TabIndex = 21;
+            this.clerkAddEvent1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
+            this.clerkAddEvent1.Location = new System.Drawing.Point(373, 135);
+            this.clerkAddEvent1.Name = "clerkAddEvent1";
+            this.clerkAddEvent1.Size = new System.Drawing.Size(788, 661);
+            this.clerkAddEvent1.TabIndex = 21;
+            // 
+            // clerkApplications4
+            // 
+            this.clerkApplications4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
+            this.clerkApplications4.Location = new System.Drawing.Point(373, 135);
+            this.clerkApplications4.Name = "clerkApplications4";
+            this.clerkApplications4.Size = new System.Drawing.Size(788, 661);
+            this.clerkApplications4.TabIndex = 22;
             // 
             // ClerkPage
             // 
@@ -312,11 +322,12 @@ namespace Gmina
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(90)))));
             this.ClientSize = new System.Drawing.Size(1211, 863);
-            this.Controls.Add(this.clerkApplications1);
+            this.Controls.Add(this.clerkApplications4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.clerkAddEvent1);
             this.Name = "ClerkPage";
             this.Text = "ClerkPage";
             this.Load += new System.EventHandler(this.ClerkPage_Load);
@@ -352,5 +363,9 @@ namespace Gmina
         private Body.ClerkApplications clerkApplications1;
         private UserEntity user;
         private ButtonRounded logOut;
+        private Body.ClerkApplications clerkApplications2;
+        private Body.ClerkAddEvent clerkAddEvent1;
+        private Body.ClerkApplications clerkApplications3;
+        private Body.ClerkApplications clerkApplications4;
     }
 }
