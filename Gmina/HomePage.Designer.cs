@@ -64,7 +64,6 @@ namespace Gmina
             this.panel3 = new System.Windows.Forms.Panel();
             this.logOut = new Gmina.ButtonRounded();
             this.profile2 = new Gmina.ButtonRounded();
-            this.settings2 = new Gmina.ButtonRounded();
             this.reservation2 = new Gmina.ButtonRounded();
             this.supportContactBody1 = new Gmina.Body.SupportContactBody();
             this.applicationSelection1 = new Gmina.Body.ApplicationSelection();
@@ -81,7 +80,7 @@ namespace Gmina
             this.profileBody1 = new Gmina.Body.ProfileBody();
             this.applicationSelection2 = new Gmina.Body.ApplicationSelection();
             this.wnioski2 = new Gmina.Body.Wnioski();
-            this.eventsBody2 = new Gmina.Body.EventsBody(this);
+            this.eventsBody3 = new Gmina.Body.EventsBody(this);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -217,7 +216,6 @@ namespace Gmina
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
             this.panel3.Controls.Add(this.logOut);
             this.panel3.Controls.Add(this.profile2);
-            this.panel3.Controls.Add(this.settings2);
             this.panel3.Controls.Add(this.reservation2);
             this.panel3.Location = new System.Drawing.Point(426, 16);
             this.panel3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -250,7 +248,7 @@ namespace Gmina
             this.profile2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.profile2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.profile2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.profile2.Location = new System.Drawing.Point(570, 23);
+            this.profile2.Location = new System.Drawing.Point(670, 23);
             this.profile2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.profile2.Name = "profile2";
             this.profile2.Size = new System.Drawing.Size(101, 36);
@@ -258,23 +256,6 @@ namespace Gmina
             this.profile2.Text = "Profil";
             this.profile2.UseVisualStyleBackColor = false;
             this.profile2.Click += new System.EventHandler(this.profileButtonAction);
-            // 
-            // settings2
-            // 
-            this.settings2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(148)))));
-            this.settings2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.settings2.FlatAppearance.BorderSize = 0;
-            this.settings2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.settings2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.settings2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.settings2.Location = new System.Drawing.Point(680, 23);
-            this.settings2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.settings2.Name = "settings2";
-            this.settings2.Size = new System.Drawing.Size(101, 36);
-            this.settings2.TabIndex = 24;
-            this.settings2.Text = "Ustawienia";
-            this.settings2.UseVisualStyleBackColor = false;
-            this.settings2.Click += new System.EventHandler(this.settingsButtonAction);
             // 
             // reservation2
             // 
@@ -441,15 +422,15 @@ namespace Gmina
             this.wnioski2.Size = new System.Drawing.Size(901, 867);
             this.wnioski2.TabIndex = 24;
             // 
-            // eventsBody2
+            // eventsBody3
             // 
-            this.eventsBody2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
-            this.eventsBody2.Location = new System.Drawing.Point(426, 180);
-            this.eventsBody2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.eventsBody2.Name = "eventsBody2";
-            this.eventsBody2.Size = new System.Drawing.Size(901, 868);
-            this.eventsBody2.TabIndex = 25;
-            this.eventsBody2.Load += new System.EventHandler(this.eventsBody2_Load);
+            this.eventsBody3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
+            this.eventsBody3.Location = new System.Drawing.Point(426, 181);
+            this.eventsBody3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.eventsBody3.Name = "eventsBody3";
+            this.eventsBody3.Size = new System.Drawing.Size(901, 867);
+            this.eventsBody3.TabIndex = 25;
+            this.eventsBody3.Load += new System.EventHandler(this.eventsBody3_Load);
             // 
             // HomePage
             // 
@@ -457,7 +438,7 @@ namespace Gmina
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(90)))));
             this.ClientSize = new System.Drawing.Size(1384, 1151);
-            this.Controls.Add(this.eventsBody2);
+            this.Controls.Add(this.eventsBody3);
             this.Controls.Add(this.wnioski2);
             this.Controls.Add(this.applicationSelection2);
             this.Controls.Add(this.panel4);
@@ -513,7 +494,6 @@ namespace Gmina
         private ButtonRounded EvenetButton;
         private ButtonRounded reservation2;
         private ButtonRounded profile2;
-        private ButtonRounded settings2;
         private Body.SingleEvent singleEvent1;
         private EventsBody eventsBody1;
         private SingleEvent singleEvent2;
@@ -530,5 +510,6 @@ namespace Gmina
         private ApplicationSelection applicationSelection2;
         private Wnioski wnioski2;
         private EventsBody eventsBody2;
+        private EventsBody eventsBody3;
     }
 }

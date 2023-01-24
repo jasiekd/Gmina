@@ -17,14 +17,16 @@ namespace Gmina.Body
     {
         //HomePage homePage;
         public HomePage homePage;
-        
         public ListItem CurrentListItem;
-      
+        public EventsBody()
+        {
+            InitializeComponent();
+        }
         public EventsBody(HomePage homePage)
         {
             this.homePage = homePage;
             CurrentListItem = new ListItem(homePage);
-            CurrentListItem.Picture = Resources.image;
+            CurrentListItem.Picture = "https://smaller-pictures.appspot.com/images/dreamstime_xxl_65780868_small.jpg";
             CurrentListItem.Title = "t";
             CurrentListItem.Description = "a";
             CurrentListItem.LongDescription = "k";
@@ -58,7 +60,7 @@ namespace Gmina.Body
                 for (int i=0; i < listItems.Length; i++)
                 {
                     listItems[i] = new ListItem(homePage);
-                    listItems[i].Picture = Resources.image;
+                    listItems[i].Picture = "https://smaller-pictures.appspot.com/images/dreamstime_xxl_65780868_small.jpg";
                     listItems[i].Title = list2.ElementAt(i).Title;
                     listItems[i].Description = list2.ElementAt(i).ShortDescription;
                     listItems[i].LongDescription = list2.ElementAt(i).Description;

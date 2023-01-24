@@ -93,6 +93,18 @@ namespace Gmina.Body
                     {
 
                     }
+                    List<UserApplicationEntity> data = LoadData();
+                    ApplicationsList.Rows.Clear();
+                    foreach (UserApplicationEntity item in data)
+                    {
+
+                        ApplicationsList.Rows.Add(item.ID, item.ApplicationName, item.DatePosted.ToString(), item.Status);
+                    }
+                    foreach (DataGridViewRow row in ApplicationsList.Rows)
+                    {
+                        row.DefaultCellStyle.BackColor = Color.FromArgb(60, 78, 176);
+                        row.DefaultCellStyle.ForeColor = Color.FromArgb(246, 246, 246);
+                    }
                 }
                 
             }
@@ -105,11 +117,26 @@ namespace Gmina.Body
         {
             if(selection!=null)
             {
-                Trace.WriteLine("działa Cancel");
                 selection.Show();
-                selection.BringToFront();
+                selection.BringToFront();               
             }
             
+        }
+
+        public void resetList()
+        {
+            List<UserApplicationEntity> data = LoadData();
+            ApplicationsList.Rows.Clear();
+            foreach (UserApplicationEntity item in data)
+            {
+
+                ApplicationsList.Rows.Add(item.ID, item.ApplicationName, item.DatePosted.ToString(), item.Status);
+            }
+            foreach (DataGridViewRow row in ApplicationsList.Rows)
+            {
+                row.DefaultCellStyle.BackColor = Color.FromArgb(60, 78, 176);
+                row.DefaultCellStyle.ForeColor = Color.FromArgb(246, 246, 246);
+            }
         }
 
         private void Wnioski_Load(object sender, EventArgs e)

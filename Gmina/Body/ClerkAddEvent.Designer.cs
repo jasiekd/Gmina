@@ -37,14 +37,10 @@
             this.EventShortDescriptionLabel = new System.Windows.Forms.Label();
             this.EventShortDescription = new System.Windows.Forms.TextBox();
             this.EventImageLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.EventImageButton = new Gmina.ButtonRounded();
-            this.EventImage = new System.Windows.Forms.PictureBox();
             this.AddEventButton = new Gmina.ButtonRounded();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EventImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,8 +68,8 @@
             this.tableLayoutPanel1.Controls.Add(this.EventShortDescriptionLabel, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.EventShortDescription, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.EventImageLabel, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.AddEventButton, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 7);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 9;
@@ -84,9 +80,9 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 19F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 291F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 202F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 99F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(768, 780);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(768, 628);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // EventTitleText
@@ -153,47 +149,9 @@
             this.EventImageLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.EventImageLabel.Location = new System.Drawing.Point(110, 467);
             this.EventImageLabel.Name = "EventImageLabel";
-            this.EventImageLabel.Size = new System.Drawing.Size(114, 15);
+            this.EventImageLabel.Size = new System.Drawing.Size(91, 15);
             this.EventImageLabel.TabIndex = 4;
-            this.EventImageLabel.Text = "Grafika wydarzenia";
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.EventImageButton, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.EventImage, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(110, 492);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(537, 195);
-            this.tableLayoutPanel2.TabIndex = 5;
-            // 
-            // EventImageButton
-            // 
-            this.EventImageButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(148)))));
-            this.EventImageButton.FlatAppearance.BorderSize = 0;
-            this.EventImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EventImageButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.EventImageButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.EventImageButton.Location = new System.Drawing.Point(271, 3);
-            this.EventImageButton.Name = "EventImageButton";
-            this.EventImageButton.Size = new System.Drawing.Size(150, 40);
-            this.EventImageButton.TabIndex = 1;
-            this.EventImageButton.Text = "Wybierz obraz";
-            this.EventImageButton.UseVisualStyleBackColor = false;
-            this.EventImageButton.Click += new System.EventHandler(this.EventImageButton_Click);
-            // 
-            // EventImage
-            // 
-            this.EventImage.Location = new System.Drawing.Point(3, 3);
-            this.EventImage.Name = "EventImage";
-            this.EventImage.Size = new System.Drawing.Size(262, 189);
-            this.EventImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.EventImage.TabIndex = 0;
-            this.EventImage.TabStop = false;
+            this.EventImageLabel.Text = "Link do zdjęcia:";
             // 
             // AddEventButton
             // 
@@ -202,7 +160,7 @@
             this.AddEventButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddEventButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.AddEventButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.AddEventButton.Location = new System.Drawing.Point(110, 694);
+            this.AddEventButton.Location = new System.Drawing.Point(110, 542);
             this.AddEventButton.Name = "AddEventButton";
             this.AddEventButton.Size = new System.Drawing.Size(190, 70);
             this.AddEventButton.TabIndex = 8;
@@ -219,6 +177,13 @@
             this.panel1.Size = new System.Drawing.Size(788, 586);
             this.panel1.TabIndex = 10;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(110, 492);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(537, 23);
+            this.textBox1.TabIndex = 9;
+            // 
             // ClerkAddEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -230,8 +195,6 @@
             this.Size = new System.Drawing.Size(788, 661);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.EventImage)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -247,12 +210,10 @@
         private Label EventDescriptionLabel;
         private TextBox EventDescription;
         private Label EventImageLabel;
-        private TableLayoutPanel tableLayoutPanel2;
-        private PictureBox EventImage;
-        private ButtonRounded EventImageButton;
         private Panel panel1;
         private Label EventShortDescriptionLabel;
         private TextBox EventShortDescription;
         private ButtonRounded AddEventButton;
+        private TextBox textBox1;
     }
 }

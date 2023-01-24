@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gmina.Body;
+using static System.Net.WebRequestMethods;
+
 namespace Gmina.Body
 {
     public partial class SingleEvent : UserControl
@@ -26,7 +28,7 @@ namespace Gmina.Body
         }
         private string _title;
         private string _longDescription;
-        private Image _picture;
+        private string _picture;
         public string Title
         {
             get { return _title; }
@@ -39,17 +41,22 @@ namespace Gmina.Body
             set { _longDescription = value; lblDescription.Text = value; }
         }
 
-        public Image Picture
+        public string Picture
         {
             get { return _picture; }
-            set { _picture = value; EventPicture.Image = value; }
+            set { _picture = value; EventPicture.ImageLocation = value; }
         }
 
         private void SingleEvent_Load(object sender, EventArgs e)
         {
             //lblDescription.Text = eventsBody.wtf();
+            EventPicture.SizeMode = PictureBoxSizeMode.Zoom;
 
+        }
 
+        private void EventPicture_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

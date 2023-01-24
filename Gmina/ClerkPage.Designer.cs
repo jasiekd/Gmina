@@ -53,13 +53,11 @@ namespace Gmina
             this.profile2 = new Gmina.ButtonRounded();
             this.AddUserButton = new Gmina.ButtonRounded();
             this.logOut = new Gmina.ButtonRounded();
-            this.settings2 = new Gmina.ButtonRounded();
             this.clerkAddEvent1 = new Gmina.Body.ClerkAddEvent();
             this.addUserBody1 = new Gmina.Body.AddUserBody();
             this.menuBody1 = new Gmina.Body.MenuBody();
             this.profileBody1 = new Gmina.Body.ProfileBody();
             this.electionOrganization1 = new Gmina.Body.ElectionOrganization();
-            this.clerkApplications6 = new Gmina.Body.ClerkApplications();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -220,7 +218,6 @@ namespace Gmina
             this.panel3.Controls.Add(this.profile2);
             this.panel3.Controls.Add(this.AddUserButton);
             this.panel3.Controls.Add(this.logOut);
-            this.panel3.Controls.Add(this.settings2);
             this.panel3.Location = new System.Drawing.Point(373, 12);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel3.Name = "panel3";
@@ -235,7 +232,7 @@ namespace Gmina
             this.profile2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.profile2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.profile2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.profile2.Location = new System.Drawing.Point(469, 17);
+            this.profile2.Location = new System.Drawing.Point(586, 19);
             this.profile2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.profile2.Name = "profile2";
             this.profile2.Size = new System.Drawing.Size(88, 27);
@@ -277,22 +274,6 @@ namespace Gmina
             this.logOut.Text = "Wyloguj";
             this.logOut.UseVisualStyleBackColor = false;
             this.logOut.Click += new System.EventHandler(this.logOut_Click);
-            // 
-            // settings2
-            // 
-            this.settings2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(64)))), ((int)(((byte)(148)))));
-            this.settings2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.settings2.FlatAppearance.BorderSize = 0;
-            this.settings2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.settings2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.settings2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.settings2.Location = new System.Drawing.Point(585, 19);
-            this.settings2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.settings2.Name = "settings2";
-            this.settings2.Size = new System.Drawing.Size(88, 27);
-            this.settings2.TabIndex = 24;
-            this.settings2.Text = "Ustawienia";
-            this.settings2.UseVisualStyleBackColor = false;
             // 
             // clerkAddEvent1
             // 
@@ -341,21 +322,12 @@ namespace Gmina
             this.electionOrganization1.TabIndex = 26;
             this.electionOrganization1.Load += new System.EventHandler(this.electionOrganization1_Load);
             // 
-            // clerkApplications6
-            // 
-            this.clerkApplications6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
-            this.clerkApplications6.Location = new System.Drawing.Point(373, 136);
-            this.clerkApplications6.Name = "clerkApplications6";
-            this.clerkApplications6.Size = new System.Drawing.Size(788, 661);
-            this.clerkApplications6.TabIndex = 27;
-            // 
             // ClerkPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(90)))));
             this.ClientSize = new System.Drawing.Size(1211, 796);
-            this.Controls.Add(this.clerkApplications6);
             this.Controls.Add(this.profileBody1);
             this.Controls.Add(this.menuBody1);
             this.Controls.Add(this.addUserBody1);
@@ -395,7 +367,6 @@ namespace Gmina
         private Label label2;
         private Label label1;
         private Panel panel3;
-        private ButtonRounded settings2;
         private Body.ClerkApplications clerkApplications1;
         static private UserEntity currentUser;
         private ButtonRounded logOut;
