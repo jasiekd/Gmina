@@ -9,7 +9,6 @@ namespace GminaApi.Data
 
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<RoleEntity> Roles { get; set; }
-        public DbSet<ApplicationEntity> Applications { get; set; }
         public DbSet<ParameterApplicationEntity> ParametersApplication { get; set; }
         public DbSet<UserApplicationEntity> UsersApplications { get; set; }
         public DbSet<UserApplicationValueEntity> UserApplicationValues { get; set; }

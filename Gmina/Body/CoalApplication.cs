@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -48,7 +51,7 @@ namespace Gmina.Body
             {
                 UserApplication newApplication = new ApplicationBuilder()
                     .setApplicationID(1)
-                    .setUserID(1)
+                    .setUserID(HomePage.getUser().ID)
                     .setDatedOfApplication(DateTime.Now)
                     .setApplicationType(ApplicationType.Coal)
                     .setStatus(ApplicationStatus.Submitted)
@@ -58,9 +61,76 @@ namespace Gmina.Body
                     .addApplicationElement("źródło ogrzewania",radioButtonsH.FirstOrDefault(r=>r.Checked).Text)
                     .addApplicationElement("położenie gospodarstwa domowego",radioButtonsP.FirstOrDefault(r=>r.Checked).Text)
                     .getResult();
-                Trace.WriteLine(newApplication.ToString());
-                //To do: wysłanie wniosku(obiekt newApplication) na serwer
-                //To do: uzupelnianie wniosku rzeczywisty id wniosku i id urzytkownika
+
+                string url = @"http://localhost:5066/api/UserApplication/";
+
+                UserApplicationEntity userApplication = new UserApplicationEntity
+                {
+                    ID = 0,
+                    UserId = newApplication.userID,
+                    DatePosted = newApplication.datedOfApplication,
+                    ApplicationName = newApplication.applicationType.ToString(),
+                    ClerkId = 0,
+                    Status = newApplication.applicationStatus.ToString(),
+                    DateModified = newApplication.datedOfApplication,
+                    Description = " "
+                };
+
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.Method = "POST";
+                request.ContentType = "application/json";
+
+                string postData = JsonConvert.SerializeObject(userApplication, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+                byte[] data = Encoding.UTF8.GetBytes(postData);
+                request.ContentLength = data.Length;
+
+                using (Stream stream = request.GetRequestStream())
+                {
+                    stream.Write(data, 0, data.Length);
+                }
+
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                using (StreamReader reader = new StreamReader(response.GetResponseStream())) ;
+
+                string str = @"http://localhost:5066/api/UserApplication/LastApplication/" + newApplication.userID;
+
+                HttpWebRequest requestm = (HttpWebRequest)WebRequest.Create(str);
+                requestm.Method = "GET";
+                requestm.Accept = "application/json";
+                int appID = 0;
+                using (HttpWebResponse responsem = (HttpWebResponse)requestm.GetResponse())
+                {
+                    appID = int.Parse(new StreamReader(responsem.GetResponseStream()).ReadToEnd());
+                }
+
+                for (int i = 0; i < newApplication.elementName.Count; i++)
+                {
+                    string url6 = @"http://localhost:5066/api/UserApplicationValue/";
+
+                    UserApplicationValueEntity userApplicationValue = new UserApplicationValueEntity
+                    {
+                        ID = 0,
+                        ParameterName = newApplication.elementName.ElementAt(i),
+                        Value = newApplication.elementValue.ElementAt(i),
+                        UserApplicationId = appID,
+                    };
+
+                    HttpWebRequest requestn = (HttpWebRequest)WebRequest.Create(url6);
+                    requestn.Method = "POST";
+                    requestn.ContentType = "application/json";
+
+                    string postData2 = JsonConvert.SerializeObject(userApplicationValue, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+                    byte[] data2 = Encoding.UTF8.GetBytes(postData2);
+                    requestn.ContentLength = data2.Length;
+
+                    using (Stream stream = requestn.GetRequestStream())
+                    {
+                        stream.Write(data2, 0, data2.Length);
+                    }
+
+                    HttpWebResponse responsen = (HttpWebResponse)requestn.GetResponse();
+                    using (StreamReader reader = new StreamReader(responsen.GetResponseStream())) ;
+                }
                 MessageBox.Show("Wniosek wysłany poprawnie", "Składanie wniosku", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if(menuBody!=null)
                 {

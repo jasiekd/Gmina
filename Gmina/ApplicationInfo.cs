@@ -62,7 +62,7 @@ namespace Gmina
 
         private void changeStatus(int id, string status)
         {
-            string str = @"http://localhost:5066/api/UserApplication/ChangeStatus/" + id + "/" + status;
+            string str = @"http://localhost:5066/api/UserApplication/ChangeStatus/" + id + "/" + status + "/" + ClerkPage.getUser().ID;
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(str);
             request.Method = "GET";

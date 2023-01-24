@@ -4,6 +4,7 @@ using GminaApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GminaApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230124164930_imgURL")]
+    partial class imgURL
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +24,27 @@ namespace GminaApi.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("ApplicationEntity", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Applications");
+                });
 
             modelBuilder.Entity("EventEntity", b =>
                 {
@@ -172,9 +196,8 @@ namespace GminaApi.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<string>("ApplicationName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("ApplicationId")
+                        .HasColumnType("int");
 
                     b.Property<int>("ClerkId")
                         .HasColumnType("int");
@@ -197,6 +220,8 @@ namespace GminaApi.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("ApplicationId");
 
                     b.ToTable("UsersApplications");
                 });
@@ -223,6 +248,15 @@ namespace GminaApi.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("UserApplicationValues");
+                });
+
+            modelBuilder.Entity("UserApplicationEntity", b =>
+                {
+                    b.HasOne("ApplicationEntity", "Application")
+                        .WithMany()
+                        .HasForeignKey("ApplicationId");
+
+                    b.Navigation("Application");
                 });
 #pragma warning restore 612, 618
         }

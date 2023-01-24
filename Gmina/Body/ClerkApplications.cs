@@ -28,7 +28,7 @@ namespace Gmina.Body
             ApplicationsList.Rows.Clear();
             foreach (var item in data)
             {
-                ApplicationsList.Rows.Add(item.ID, item.Application.Name, item.DatePosted.ToString(), item.Status);
+                ApplicationsList.Rows.Add(item.ID, item.ApplicationName, item.DatePosted.ToString(), item.Status);
             }
             foreach (DataGridViewRow row in ApplicationsList.Rows)
             {
@@ -40,7 +40,7 @@ namespace Gmina.Body
         {
             // pobranie danych o wnioskach z serwera
 
-            string str = @"http://localhost:5066/api/UserApplication";
+            string str = @"http://localhost:5066/api/UserApplication/ForClerk/" + ClerkPage.getUser().ID;
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(str);
             request.Method = "GET";
