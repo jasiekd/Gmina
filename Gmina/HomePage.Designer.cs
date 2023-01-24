@@ -81,7 +81,7 @@ namespace Gmina
             this.profileBody1 = new Gmina.Body.ProfileBody();
             this.applicationSelection2 = new Gmina.Body.ApplicationSelection();
             this.wnioski2 = new Gmina.Body.Wnioski();
-            this.eventsBody2 = new Gmina.Body.EventsBody();
+            this.eventsBody2 = new Gmina.Body.EventsBody(this);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();

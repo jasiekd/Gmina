@@ -16,26 +16,31 @@ namespace Gmina.Body
     public partial class EventsBody : UserControl
     {
         //HomePage homePage;
+        public HomePage homePage;
+        
         public ListItem CurrentListItem;
       
-        public EventsBody()
+        public EventsBody(HomePage homePage)
         {
-            CurrentListItem = new ListItem();
+            this.homePage = homePage;
+            CurrentListItem = new ListItem(homePage);
             CurrentListItem.Picture = Resources.image;
-            CurrentListItem.Title = "lol";
-            CurrentListItem.Description = "wtf";
-            //this.homePage = homePage;
+            CurrentListItem.Title = "t";
+            CurrentListItem.Description = "a";
+            CurrentListItem.LongDescription = "k";
+            
             InitializeComponent();
 
             populateItems();
             
 
         }
-       public string wtf()
+       
+      /*  public string wtf()
         {
 
             return CurrentListItem.Description;
-        }
+        }*/
         public void populateItems()
         {
             string str = @"http://localhost:5066/api/Event/ByDate";
@@ -52,10 +57,11 @@ namespace Gmina.Body
                 ListItem[] listItems = new ListItem[list2.Count];
                 for (int i=0; i < listItems.Length; i++)
                 {
-                    listItems[i] = new ListItem();
+                    listItems[i] = new ListItem(homePage);
                     listItems[i].Picture = Resources.image;
                     listItems[i].Title = list2.ElementAt(i).Title;
                     listItems[i].Description = list2.ElementAt(i).ShortDescription;
+                    listItems[i].LongDescription = list2.ElementAt(i).Description;
 
                     if (flowLayoutPanel.Controls.Count < 0)
                         flowLayoutPanel.Controls.Clear();
