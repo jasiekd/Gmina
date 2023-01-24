@@ -29,7 +29,7 @@ namespace Gmina
             profileBody1.SetUserProfileLabels();
         }
         
-        public void ShowSingleEvent(string _title,string _longDescription, Image _picture)
+        public void ShowSingleEvent(string _title,string _longDescription, string _picture)
         {
             //singleEvent2 = new SingleEvent();
             //initSingleEvent();
@@ -54,6 +54,8 @@ namespace Gmina
 
         private void HomePage_Load(object sender, EventArgs e)
         {
+            //this.eventsBody3 = new Gmina.Body.EventsBody(this);
+
             singleEvent2.Hide();
         }
 
@@ -108,8 +110,8 @@ namespace Gmina
 
         private void EvenetButton_Click(object sender, EventArgs e)
         {
-            eventsBody2.Show();
-            eventsBody2.BringToFront();
+            eventsBody3.Show();
+            eventsBody3.BringToFront();
         }
 
         private void SupportContactButton_Click(object sender, EventArgs e)
@@ -172,9 +174,10 @@ namespace Gmina
 
         }
 
-        private void eventsBody2_Load(object sender, EventArgs e)
+    
+        private void eventsBody3_Load(object sender, EventArgs e)
         {
-            eventsBody2.Hide();
+            eventsBody3.Hide();
         }
     }
 }
