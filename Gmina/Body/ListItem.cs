@@ -12,23 +12,29 @@ namespace Gmina.Body
 {
     public partial class ListItem : UserControl
     {
-       // HomePage homePage;
+        HomePage homePage;
        // EventsBody eventsBody;
-        public ListItem()
+        public ListItem(HomePage homePage)
         {
+            this.homePage = homePage;
             InitializeComponent();
-            //this.homePage = homePage;
+          
            // this.eventsBody = eventsBody;
         }
         private string _title;
         private string _description;
         private Image _picture;
+        private string _longDescription;
         public string Title
         {
             get { return _title; }
             set { _title = value; lblTitle.Text = value; }
         }
-       
+        public string LongDescription
+        {
+            get { return _longDescription; }
+            set { _longDescription = value; }
+        }
         public string Description
         {
             get { return _description; }
@@ -72,6 +78,7 @@ namespace Gmina.Body
         private void ShowSingleEvent_Click(object sender, EventArgs e)
         {
             //singleEvent1.Show();
+            homePage.ShowSingleEvent(_title, _longDescription, _picture);
         }
     }
 }

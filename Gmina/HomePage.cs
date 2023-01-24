@@ -29,10 +29,13 @@ namespace Gmina
             profileBody1.SetUserProfileLabels();
         }
         
-        public void ShowSingleEvent()
+        public void ShowSingleEvent(string _title,string _longDescription, Image _picture)
         {
-            singleEvent2 = new SingleEvent();
-            initSingleEvent();
+            //singleEvent2 = new SingleEvent();
+            //initSingleEvent();
+            singleEvent2.Title = _title;
+            singleEvent2.Description = _longDescription;
+            singleEvent2.Picture = _picture;
             singleEvent2.Show();
             singleEvent2.BringToFront();
         }
