@@ -102,6 +102,7 @@ namespace Gmina
 
         private void ApplicationsButton_Click(object sender, EventArgs e)
         {
+            wnioski2.resetList();
             wnioski2.Show();
             wnioski2.BringToFront();
         }

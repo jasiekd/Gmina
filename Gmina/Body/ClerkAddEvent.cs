@@ -23,22 +23,7 @@ namespace Gmina.Body
 
         private void EventImageButton_Click(object sender, EventArgs e)
         {
-            String imageLocation = "";
-            try
-            {
-                OpenFileDialog dialog = new OpenFileDialog();
-                dialog.Filter="jpg files(*.jpg)|*.jpg| PNG files(*.png)|*.png";
-
-                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    imageLocation = dialog.FileName;
-                    EventImage.ImageLocation = imageLocation;
-                }
-
-            }catch(Exception exc)
-            {
-                MessageBox.Show("Problem z wgraniem obrazu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
