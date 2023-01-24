@@ -126,7 +126,7 @@ namespace Gmina.Body
                     {
                         stream.Write(data2, 0, data2.Length);
                     }
-
+                    HomePage.getUser();
                     HttpWebResponse responsen = (HttpWebResponse)requestn.GetResponse();
                     using (StreamReader reader = new StreamReader(responsen.GetResponseStream()));
                 }
