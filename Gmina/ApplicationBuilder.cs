@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gmina
 {
-    internal class ApplicationBuilder : ApplicationBuilderInterface
+    public class ApplicationBuilder : ApplicationBuilderInterface
     {
         List<String> elementName = new List<String>();
         List<String> elementValue = new List<String>();
@@ -15,7 +15,6 @@ namespace Gmina
         DateTime datedOfApplication = new DateTime(0);
         ApplicationStatus applicationStatus = ApplicationStatus.Non;
         int userID = -1;
-
         public ApplicationBuilderInterface addApplicationElement(string name, string value)
         {
             elementName.Add(name);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Gmina.Body
 {
-    internal class UserApplication 
+    public class UserApplication 
     {
         public List<String> elementName { get; set; }
         public List<String> elementValue { get; set; }

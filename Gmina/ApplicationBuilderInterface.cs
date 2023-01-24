@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Gmina
 {
-    enum ApplicationType{
+    public enum ApplicationType{
         Coal,Plus500,IDCard,Shielding,Non
     }
-    enum ApplicationStatus
+    public enum ApplicationStatus
     {
         Submitted,Accepted,Rejected,Improvement,Cancelled,Non
     }
-    internal interface ApplicationBuilderInterface
+    public interface ApplicationBuilderInterface
     {
         public ApplicationBuilderInterface setUserID(int id);
         public ApplicationBuilderInterface setApplicationID(int id);
