@@ -38,8 +38,8 @@
             this.EventShortDescription = new System.Windows.Forms.TextBox();
             this.EventImageLabel = new System.Windows.Forms.Label();
             this.AddEventButton = new Gmina.ButtonRounded();
+            this.imgURLTextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +69,7 @@
             this.tableLayoutPanel1.Controls.Add(this.EventShortDescription, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.EventImageLabel, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.AddEventButton, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.imgURLTextBox, 1, 7);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 9;
@@ -168,6 +168,13 @@
             this.AddEventButton.UseVisualStyleBackColor = false;
             this.AddEventButton.Click += new System.EventHandler(this.AddEventButton_Click);
             // 
+            // imgURLTextBox
+            // 
+            this.imgURLTextBox.Location = new System.Drawing.Point(110, 492);
+            this.imgURLTextBox.Name = "imgURLTextBox";
+            this.imgURLTextBox.Size = new System.Drawing.Size(537, 23);
+            this.imgURLTextBox.TabIndex = 9;
+            // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
@@ -176,13 +183,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(788, 586);
             this.panel1.TabIndex = 10;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(110, 492);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(537, 23);
-            this.textBox1.TabIndex = 9;
             // 
             // ClerkAddEvent
             // 
@@ -214,6 +214,6 @@
         private Label EventShortDescriptionLabel;
         private TextBox EventShortDescription;
         private ButtonRounded AddEventButton;
-        private TextBox textBox1;
+        private TextBox imgURLTextBox;
     }
 }

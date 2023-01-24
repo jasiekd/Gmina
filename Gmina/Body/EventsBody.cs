@@ -15,7 +15,6 @@ namespace Gmina.Body
 {
     public partial class EventsBody : UserControl
     {
-        //HomePage homePage;
         public HomePage homePage;
         public ListItem CurrentListItem;
         public EventsBody()
@@ -60,7 +59,7 @@ namespace Gmina.Body
                 for (int i=0; i < listItems.Length; i++)
                 {
                     listItems[i] = new ListItem(homePage);
-                    listItems[i].Picture = "https://smaller-pictures.appspot.com/images/dreamstime_xxl_65780868_small.jpg";
+                    listItems[i].Picture = list2.ElementAt(i).imgURL;
                     listItems[i].Title = list2.ElementAt(i).Title;
                     listItems[i].Description = list2.ElementAt(i).ShortDescription;
                     listItems[i].LongDescription = list2.ElementAt(i).Description;

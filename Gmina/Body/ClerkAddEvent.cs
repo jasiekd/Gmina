@@ -33,12 +33,6 @@ namespace Gmina.Body
 
         private void AddEventButton_Click(object sender, EventArgs e)
         {
-            string title = EventTitleText.Text;
-            string sDesc = EventShortDescription.Text;
-            string desc = EventDescription.Text;
-            //Bitmap image = new Bitmap(EventImage.Image);
-            //Image image = EventImage.Image;
-
             string url = @"http://localhost:5066/api/Event/";
             EventEntity tempEvent = new EventEntity
             {
@@ -47,7 +41,8 @@ namespace Gmina.Body
                 ShortDescription = EventShortDescription.Text,
                 Description = EventDescription.Text,
                 DateCreated = DateTime.Now,
-                ClerkId = 1,
+                ClerkId = ClerkPage.getUser().ID,
+                imgURL = imgURLTextBox.Text,
             };
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
