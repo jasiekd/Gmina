@@ -23,7 +23,7 @@ namespace Gmina.Body
         }
         private string _title;
         private string _description;
-        private Image _picture;
+        private string _picture;
         private string _longDescription;
         public string Title
         {
@@ -41,10 +41,10 @@ namespace Gmina.Body
             set { _description = value; lblDescription.Text = value; }
         }
         
-        public Image Picture
+        public string Picture
         {
             get { return _picture; }
-            set { _picture = value; EventPicture.Image = value; }
+            set { _picture = value; EventPicture.ImageLocation = value; }
         }
 
         private void ListItem_MouseHover(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace Gmina.Body
 
         private void ListItem_Load(object sender, EventArgs e)
         {
-
+            EventPicture.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         private void ListItem_MouseLeave(object sender, EventArgs e)
