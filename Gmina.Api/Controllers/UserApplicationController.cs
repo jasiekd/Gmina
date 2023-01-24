@@ -24,9 +24,13 @@ namespace Gmina_Api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserApplicationEntity>>> GetUsersApplications()
         {
-            return await _context.UsersApplications.Include(x=>x.Application).ToListAsync();
+            return await _context.UsersApplications.ToListAsync();
         }
-
+        [HttpGet("ForClerk/{id}")]
+        public async Task<ActionResult<IEnumerable<UserApplicationEntity>>> GetUsersApplicationsForClerk(int id)
+        {
+            return await _context.UsersApplications.Where(x=> (x.Status == "Submitted" || x.Status == "Improvement") && (x.ClerkId==0 || x.ClerkId==id)).ToListAsync();
+        }
         // GET: api/UserApplication/5
         [HttpGet("{id}")]
         public async Task<ActionResult<UserApplicationEntity>> GetUserApplicationEntity(int id)
@@ -122,12 +126,12 @@ namespace Gmina_Api.Controllers
 
         // POST: api/UserApplication/ChangeStatus/2/accepted
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpGet("ChangeStatus/{id}/{status}")]
-        public async Task<ActionResult<UserApplicationEntity>> GetChangeStatusUserApplicationEntity(int id, string status)
+        [HttpGet("ChangeStatus/{id}/{status}/{clerkId}")]
+        public async Task<ActionResult<UserApplicationEntity>> GetChangeStatusUserApplicationEntity(int id, string status, int clerkId)
         {
             UserApplicationEntity temp = await _context.UsersApplications.FindAsync(id);
             temp.Status = status;
-            //temp.ClerkId = clerkId;
+            temp.ClerkId = clerkId;
             temp.DateModified = DateTime.Now;
             _context.UsersApplications.Update(temp);
             await _context.SaveChangesAsync();
@@ -140,8 +144,23 @@ namespace Gmina_Api.Controllers
         [HttpGet("GetForUser/{id}")]
         public async Task<ActionResult<IEnumerable<UserApplicationEntity>>> GetUserApplicationForUserEntity(int id)
         {
-            return await _context.UsersApplications.Include(x=>x.Application).Where(x=>x.UserId==id).ToListAsync();
+            return await _context.UsersApplications.Where(x=>x.UserId==id).ToListAsync();
         }
+        [HttpGet("GetForUserExisting/{id}")]
+        public async Task<ActionResult<IEnumerable<UserApplicationEntity>>> GetUserApplicationForUserEntityExisting(int id)
+        {
+            return await _context.UsersApplications.Where(x => x.UserId == id).Where(x=> x.Status!="Deleted").ToListAsync();
+        }
+        [HttpGet("StatusOnDeleted/{id}")]
+        public async Task<ActionResult<UserApplicationEntity>> GetChangeStatusOnDeleted(int id)
+        {
+            UserApplicationEntity temp = await _context.UsersApplications.FindAsync(id);
+            temp.Status = "Deleted";
+            temp.DateModified = DateTime.Now;
+            _context.UsersApplications.Update(temp);
+            await _context.SaveChangesAsync();
 
+            return temp;
+        }
     }
 }

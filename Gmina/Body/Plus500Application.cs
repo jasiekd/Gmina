@@ -39,7 +39,7 @@ namespace Gmina.Body
             {
                 UserApplication newApplication = new ApplicationBuilder()
                     .setApplicationID(1)
-                    .setUserID(1)
+                    .setUserID(HomePage.getUser().ID)
                     .setDatedOfApplication(DateTime.Now)
                     .setApplicationType(ApplicationType.Plus500)
                     .setStatus(ApplicationStatus.Submitted)
@@ -57,18 +57,12 @@ namespace Gmina.Body
 
                 
                 string url = @"http://localhost:5066/api/UserApplication/";
-                ApplicationEntity test = new ApplicationEntity { 
-                    ID = 0,
-                    Name = "Test",
-                    Description = "Test",
-                };
                 UserApplicationEntity userApplication = new UserApplicationEntity
                 {
                     ID = 0,
                     UserId = newApplication.userID,
-                    ApplicationId = newApplication.applicationID,
                     DatePosted = newApplication.datedOfApplication,
-                    Application = test, 
+                    ApplicationName = newApplication.applicationType.ToString(),
                     ClerkId = 0,
                     Status = newApplication.applicationStatus.ToString(),
                     DateModified = newApplication.datedOfApplication,
@@ -130,9 +124,7 @@ namespace Gmina.Body
                     HttpWebResponse responsen = (HttpWebResponse)requestn.GetResponse();
                     using (StreamReader reader = new StreamReader(responsen.GetResponseStream()));
                 }
-                
-                //To do: wysłanie wniosku(obiekt newApplication) na serwer
-                //To do: uzupelnianie wniosku rzeczywisty id wniosku i id uzytkownika
+
                 MessageBox.Show("Wniosek wysłany poprawnie", "Składanie wniosku", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (menuBody != null)
                 {

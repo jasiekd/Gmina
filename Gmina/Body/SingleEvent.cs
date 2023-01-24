@@ -22,10 +22,10 @@ namespace Gmina.Body
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            //this.Hide();
+            this.Hide();
         }
         private string _title;
-        private string _description;
+        private string _longDescription;
         private Image _picture;
         public string Title
         {
@@ -35,8 +35,8 @@ namespace Gmina.Body
 
         public string Description
         {
-            get { return _description; }
-            set { _description = value; lblDescription.Text = value; }
+            get { return _longDescription; }
+            set { _longDescription = value; lblDescription.Text = value; }
         }
 
         public Image Picture

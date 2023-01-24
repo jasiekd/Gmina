@@ -9,4 +9,5 @@
         public string Description { get; set; }
         public DateTime DateCreated { get; set; }
         public int ClerkId { get; set; }
+        public string imgURL { get; set; }
     }
