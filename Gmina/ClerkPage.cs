@@ -43,8 +43,8 @@ namespace Gmina
 
         private void ApplicationsButton_Click(object sender, EventArgs e)
         {
-            clerkApplications5.Show();
-            clerkApplications5.BringToFront();
+            clerkApplications6.Show();
+            clerkApplications6.BringToFront();
         }
 
         private void EvenetButton_Click(object sender, EventArgs e)
@@ -89,6 +89,17 @@ namespace Gmina
             
             profileBody1.Show();
             profileBody1.BringToFront();
+        }
+
+        private void electionOrganization1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ElectionsButton_Click(object sender, EventArgs e)
+        {
+            electionOrganization1.Show();
+            electionOrganization1.BringToFront();
         }
     }
 }

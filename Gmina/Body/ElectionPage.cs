@@ -23,10 +23,10 @@ namespace Gmina.Body
         {
             createOptionList();
         }
-        private void doVote(object sender, EventArgs e)
+        private void doVote(object sender, EventArgs e, int parametr)
         {
             ButtonRounded buttonSender = (ButtonRounded)sender;
-            Debug.WriteLine("constructor fired"+buttonSender.TabIndex);// odczyt przekazanego parametru
+            Debug.WriteLine("constructor fired "+parametr);// odczyt przekazanego parametru
 
             //To do: wysłanie oddanego głosu na serwer
 
@@ -55,7 +55,9 @@ namespace Gmina.Body
                 tmp.Size = new System.Drawing.Size(219, 50);
                 tmp.Text = "Zagłosuj"+i;
                 tmp.TabIndex = i; //To do: w tabindex można przekazać liczbe do funkcji doVote np jakieś id do czegoś na serwerze
-                tmp.Click += new System.EventHandler(this.doVote);
+                //tmp.Click += new System.EventHandler(this.doVote);
+                int parametr = i;
+                tmp.Click += new System.EventHandler((sender,args)=>doVote(sender,args, parametr));
                 this.optionButtonList.Add(tmp);
 
                 tmpLabel = new Label();
@@ -114,6 +116,9 @@ namespace Gmina.Body
             }
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

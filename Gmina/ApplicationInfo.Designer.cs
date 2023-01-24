@@ -39,6 +39,8 @@ namespace Gmina
             this.akceptButton = new Gmina.ButtonRounded();
             this.correntButton = new Gmina.ButtonRounded();
             this.rejectButton = new Gmina.ButtonRounded();
+            this.description = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ApplicationsList)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +60,7 @@ namespace Gmina
             // 
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.ApplicationsList);
-            this.panel1.Location = new System.Drawing.Point(0, 125);
+            this.panel1.Location = new System.Drawing.Point(2, 183);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(540, 457);
             this.panel1.TabIndex = 8;
@@ -103,7 +105,7 @@ namespace Gmina
             this.akceptButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.akceptButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.akceptButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.akceptButton.Location = new System.Drawing.Point(12, 82);
+            this.akceptButton.Location = new System.Drawing.Point(12, 49);
             this.akceptButton.Name = "akceptButton";
             this.akceptButton.Size = new System.Drawing.Size(150, 40);
             this.akceptButton.TabIndex = 9;
@@ -118,7 +120,7 @@ namespace Gmina
             this.correntButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.correntButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.correntButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.correntButton.Location = new System.Drawing.Point(196, 82);
+            this.correntButton.Location = new System.Drawing.Point(194, 49);
             this.correntButton.Name = "correntButton";
             this.correntButton.Size = new System.Drawing.Size(150, 40);
             this.correntButton.TabIndex = 10;
@@ -133,7 +135,7 @@ namespace Gmina
             this.rejectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rejectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rejectButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rejectButton.Location = new System.Drawing.Point(370, 82);
+            this.rejectButton.Location = new System.Drawing.Point(370, 49);
             this.rejectButton.Name = "rejectButton";
             this.rejectButton.Size = new System.Drawing.Size(150, 40);
             this.rejectButton.TabIndex = 11;
@@ -141,12 +143,32 @@ namespace Gmina
             this.rejectButton.UseVisualStyleBackColor = false;
             this.rejectButton.Click += new System.EventHandler(this.rejectButton_Click);
             // 
+            // description
+            // 
+            this.description.Location = new System.Drawing.Point(12, 110);
+            this.description.Multiline = true;
+            this.description.Name = "description";
+            this.description.Size = new System.Drawing.Size(510, 70);
+            this.description.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(12, 92);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 15);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Opis";
+            // 
             // ApplicationInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(542, 522);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.description);
             this.Controls.Add(this.rejectButton);
             this.Controls.Add(this.correntButton);
             this.Controls.Add(this.akceptButton);
@@ -173,5 +195,7 @@ namespace Gmina
         private ButtonRounded akceptButton;
         private ButtonRounded correntButton;
         private ButtonRounded rejectButton;
+        private TextBox description;
+        private Label label2;
     }
 }
