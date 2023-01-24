@@ -302,6 +302,7 @@
             this.CityTextBox.Name = "CityTextBox";
             this.CityTextBox.Size = new System.Drawing.Size(231, 23);
             this.CityTextBox.TabIndex = 29;
+            this.CityTextBox.TextChanged += new System.EventHandler(this.CityTextBox_TextChanged);
             // 
             // label13
             // 
@@ -336,6 +337,7 @@
             this.checkBox1.TabIndex = 1;
             this.checkBox1.Text = "urzędnik";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // AddUserBody
             // 

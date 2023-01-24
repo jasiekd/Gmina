@@ -33,6 +33,7 @@ namespace Gmina.Body
             StreetTextBox.Clear();
             ZipCodeTextBox.Clear();
             PESELTextBox.Clear();
+            CityTextBox.Clear();
         }
         private void AddUser_Click(object sender, EventArgs e)
         {
@@ -51,8 +52,8 @@ namespace Gmina.Body
                 Street = StreetTextBox.Text,
                 ZipCode = ZipCodeTextBox.Text,
                 Pesel = PESELTextBox.Text,
-                Town = "Kielce",
-                RoleId = 2,
+                Town = CityTextBox.Text,
+                RoleId = checkBox1.Checked ? 1:2,
         };
 
             try
@@ -92,6 +93,16 @@ namespace Gmina.Body
                     // alert bad request
                 }
             }
+        }
+
+        private void CityTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

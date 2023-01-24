@@ -11,6 +11,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Gmina.Body
 {
@@ -25,7 +26,7 @@ namespace Gmina.Body
             foreach (UserApplicationEntity item in data)
             {
           
-                ApplicationsList.Rows.Add(item.ID, item.Application.Name, item.DatePosted.ToString(), item.Status);
+                ApplicationsList.Rows.Add(item.ID, item.ApplicationName, item.DatePosted.ToString(), item.Status);
             }
             foreach (DataGridViewRow row in ApplicationsList.Rows)
             {
@@ -42,7 +43,7 @@ namespace Gmina.Body
 
         private List<UserApplicationEntity> LoadData()
         {
-            string str = @"http://localhost:5066/api/UserApplication/GetForUser/" + 1;
+            string str = @"http://localhost:5066/api/UserApplication/GetForUserExisting/" + HomePage.getUser().ID;
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(str);
             request.Method = "GET";
@@ -82,9 +83,16 @@ namespace Gmina.Body
                 result = MessageBox.Show(message, caption, buttons,MessageBoxIcon.Question);
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    //To do: usówanie wniosku na serwerze
+                    string str = @"http://localhost:5066/api/UserApplication/StatusOnDeleted/" + ApplicationsList.Rows[e.RowIndex].Cells[0].Value;
 
-                    ApplicationsList.Rows.RemoveAt(e.RowIndex);
+                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(str);
+                    request.Method = "GET";
+                    request.Accept = "application/json";
+
+                    using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                    {
+
+                    }
                 }
                 
             }
