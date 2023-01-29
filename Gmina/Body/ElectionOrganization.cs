@@ -87,7 +87,7 @@ namespace Gmina.Body
 
         void deleteElement(object sender, EventArgs e, int parametr)
         {
-            //To do usiwanie może kiedys
+           
         }
 
         private void sendButton_Click(object sender, EventArgs e)

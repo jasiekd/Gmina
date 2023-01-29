@@ -349,6 +349,9 @@ namespace Gmina
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
+            clerkApp = new Body.ClerkApplications();
+            clerkApp.Location = new System.Drawing.Point(373, 135);
+            this.Controls.Add(clerkApp);
         }
 
         #endregion
@@ -367,20 +370,21 @@ namespace Gmina
         private Label label2;
         private Label label1;
         private Panel panel3;
-        private Body.ClerkApplications clerkApplications1;
+        //private Body.ClerkApplications clerkApplications1;
         static private UserEntity currentUser;
         private ButtonRounded logOut;
-        private Body.ClerkApplications clerkApplications2;
+       // private Body.ClerkApplications clerkApplications2;
         private Body.ClerkAddEvent clerkAddEvent1;
-        private Body.ClerkApplications clerkApplications3;
-        private Body.ClerkApplications clerkApplications4;
+       // private Body.ClerkApplications clerkApplications3;
+       // private Body.ClerkApplications clerkApplications4;
         private Body.AddUserBody addUserBody1;
         private ButtonRounded AddUserButton;
-        private Body.ClerkApplications clerkApplications5;
+       // private Body.ClerkApplications clerkApplications5;
         private Body.MenuBody menuBody1;
         private Body.ProfileBody profileBody1;
         private ButtonRounded profile2;
         private Body.ElectionOrganization electionOrganization1;
-        private Body.ClerkApplications clerkApplications6;
+        //private Body.ClerkApplications clerkApplications6;
+        private Body.ClerkApplications clerkApp;
     }
 }

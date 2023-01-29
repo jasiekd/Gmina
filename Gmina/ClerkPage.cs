@@ -43,8 +43,8 @@ namespace Gmina
 
         private void ApplicationsButton_Click(object sender, EventArgs e)
         {
-            clerkApplications6.Show();
-            clerkApplications6.BringToFront();
+            clerkApp.Show();
+            clerkApp.BringToFront();
         }
 
         private void EvenetButton_Click(object sender, EventArgs e)
